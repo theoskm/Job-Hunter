@@ -1,0 +1,146 @@
+# =============================================================
+# JOB PROFILE — this is the file you edit to change what the
+# system looks for. No programming knowledge needed.
+# Everything here is plain text. Keep the indentation as it is.
+# =============================================================
+
+candidate:
+  name: "Theos Mau"
+  current_role: "Senior Chef de Partie"
+  transition_goal: "Project Manager"
+  # Path used when judging how useful a role is as a stepping stone
+  career_path:
+    - "Administration / Operations"
+    - "Operations Coordinator / Project Support"
+    - "Project Coordinator"
+    - "Junior Project Manager"
+    - "Project Manager"
+
+# -------------------------------------------------------------
+# TARGET ROLES — searched in tier order. Add or remove freely.
+# -------------------------------------------------------------
+target_roles:
+  tier_1:
+    - "Administrator"
+    - "Administrative Assistant"
+    - "Operations Assistant"
+    - "Operations Coordinator"
+    - "Operations Administrator"
+    - "Business Operations Assistant"
+    - "Business Support Assistant"
+    - "Business Support Coordinator"
+    - "Project Administrator"
+    - "Project Support Officer"
+    - "Project Support Assistant"
+    - "Project Coordinator"
+    - "Junior Project Coordinator"
+    - "PMO Assistant"
+    - "PMO Administrator"
+    - "Office Coordinator"
+    - "Commercial Operations Coordinator"
+  tier_2:
+    - "Service Coordinator"
+    - "Scheduling Coordinator"
+    - "Logistics Coordinator"
+    - "Resource Coordinator"
+    - "Account Coordinator"
+    - "Sales Operations Assistant"
+    - "Commercial Assistant"
+    - "Procurement Assistant"
+    - "Property Coordinator"
+    - "Maintenance Coordinator"
+    - "Facilities Coordinator"
+    - "Client Services Coordinator"
+    - "Operations Trainee"
+    - "Management Trainee"
+  tier_3:
+    - "Junior Project Manager"
+    - "Assistant Project Manager"
+    - "Project Officer"
+    - "PMO Coordinator"
+    - "Project Analyst"
+
+# -------------------------------------------------------------
+# LOCATIONS — listed best first. location_score is out of 5.
+# -------------------------------------------------------------
+locations:
+  - name: "Croydon"
+    radius_miles: 10
+    location_score: 5
+  - name: "Sutton"
+    radius_miles: 10
+    location_score: 5
+  - name: "Wimbledon"
+    radius_miles: 10
+    location_score: 5
+  - name: "South London"
+    radius_miles: 10
+    location_score: 4
+  - name: "Central London"
+    radius_miles: 10
+    location_score: 3
+  - name: "London"
+    radius_miles: 15
+    location_score: 3
+  - name: "Surrey"
+    radius_miles: 15
+    location_score: 2
+
+max_commute_minutes: 60
+# Unusually strong roles outside the commute target are kept but flagged
+allow_exceptional_outside_commute: true
+exceptional_score_threshold: 85
+
+# -------------------------------------------------------------
+# SCORING — weights must add up to 100
+#
+# Updated 9 Aug 2026: priority is now a fast foot-in-the-door office
+# role over one that maps tightly onto Project Management specifically.
+# accessibility and salary carry more weight; career_transition_fit
+# carries less. Change these back if that priority changes again.
+# -------------------------------------------------------------
+scoring_weights:
+  career_transition_fit: 10
+  transferable_skills: 20
+  entry_level_accessibility: 30
+  skills_match: 15
+  salary: 15
+  location: 5
+  career_development: 5
+
+priority_bands:
+  must_apply: 90      # fire emoji
+  high: 80
+  good: 70
+  stretch: 60
+  # anything below `stretch` is LOW
+
+thresholds:
+  save_to_tracker: 70    # auto-add to CRM at or above this
+  email_alert: 80        # individual Gmail alert at or above this
+  urgent_alert: 90       # extra alert at or above this
+
+# -------------------------------------------------------------
+# SEARCH BEHAVIOUR
+# -------------------------------------------------------------
+search:
+  # Try 7 days first; widen only if too few results
+  windows_days: [7, 14, 30]
+  minimum_results_before_widening: 10
+  minimum_salary: 24000
+  exclude_keywords:
+    - "commission only"
+    - "self-employed"
+    - "unpaid"
+    - "door to door"
+    - "cold calling"
+
+schedule:
+  run_at_local_time: "08:00"
+  timezone: "Europe/London"
+
+sources:
+  reed:
+    enabled: true
+  adzuna:
+    enabled: true
