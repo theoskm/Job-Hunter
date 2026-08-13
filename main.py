@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from app.collectors.run import build_collectors
 from app.database.db import Database
+from app.analytics.diagnose import describe_scores
 from app.pipeline import run_full_pipeline
 from app.timeutils import is_scheduled_run_time, local_now, utc_offset_hours
 from config.settings import ConfigError, Settings
@@ -158,6 +159,20 @@ def cmd_test_sources(settings: Settings) -> int:
     return 0 if overall_ok else 1
 
 
+def cmd_diagnose(settings: Settings) -> int:
+    """Shows WHY jobs scored as they did — which component is dragging."""
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database yet — run `python3 main.py --run` first.")
+        return 1
+    with Database(db_path) as db:
+        rows = db.conn.execute(
+            "SELECT * FROM jobs WHERE score IS NOT NULL ORDER BY score DESC"
+        ).fetchall()
+    print(describe_scores(rows, settings.profile))
+    return 0
+
+
 def cmd_init_db(settings: Settings) -> int:
     with Database(settings.secrets.database_path) as db:
         db.init_schema()
@@ -176,6 +191,7 @@ def main(argv: list[str] | None = None) -> int:
         ("--test-sources", "Check every job source responds"),
         ("--update-sheets", "Sync the CRM to Google Sheets"),
         ("--dashboard", "Launch the dashboard"),
+        ("--diagnose", "Explain why jobs scored as they did"),
         ("--status", "Show system status"),
         ("--check-config", "Validate your job profile"),
         ("--init-db", "Create the database"),
@@ -207,6 +223,7 @@ def main(argv: list[str] | None = None) -> int:
         "init_db": cmd_init_db,
         "test_sources": cmd_test_sources,
         "run": cmd_run,
+        "diagnose": cmd_diagnose,
     }[command](settings)
 
 
