@@ -22,16 +22,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from app.collectors.run import build_collectors
 from app.database.db import Database
 from app.analytics.diagnose import describe_scores
+from app.analytics.stats import gather_stats, learning_loop
+from app.notifications.templates import build_digest, build_single_alert
 from app.pipeline import run_full_pipeline
 from app.timeutils import is_scheduled_run_time, local_now, utc_offset_hours
 from config.settings import ConfigError, Settings
 
-NOT_BUILT_YET = {
-    "digest": "Phase 8 (Gmail)",
-    "test_email": "Phase 8 (Gmail)",
-    "update_sheets": "Phase 7 (Google Sheets)",
-    "dashboard": "Phase 10 (dashboard)",
-}
+NOT_BUILT_YET: dict[str, str] = {}
 
 
 def cmd_check_config(settings: Settings) -> int:
@@ -173,6 +170,129 @@ def cmd_diagnose(settings: Settings) -> int:
     return 0
 
 
+
+def _email_settings(settings: Settings) -> tuple[str, str, str, str]:
+    s = settings.secrets
+    return (s.gmail_sender, s.gmail_recipient,
+            s.google_oauth_client_secrets, s.google_token_path)
+
+
+def cmd_test_email(settings: Settings) -> int:
+    """Sends one real email. UNVERIFIED until this succeeds for you."""
+    from app.notifications.gmail import GmailNotConfigured, send_email
+    from app.notifications.templates import Email
+
+    sender, recipient, secrets_path, token_path = _email_settings(settings)
+    email = Email(
+        subject="Job Hunter — test email",
+        body_text="If you are reading this, Gmail is correctly configured.",
+        body_html="<p>If you are reading this, Gmail is correctly configured.</p>",
+    )
+    try:
+        message_id = send_email(email, sender, recipient, secrets_path, token_path)
+    except GmailNotConfigured as exc:
+        print(f"Gmail is not set up yet:\n\n  {exc}\n")
+        print("See USER_GUIDE.md, section 'Connecting Gmail'.")
+        return 1
+    except Exception as exc:  # noqa: BLE001 — diagnostic
+        print(f"Send failed: {exc}")
+        return 1
+    print(f"Sent. Gmail message id: {message_id}")
+    print(f"Check the inbox for {recipient}.")
+    return 0
+
+
+def cmd_digest(settings: Settings) -> int:
+    """Builds the daily digest, and sends it if Gmail is configured."""
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database yet — run `python3 main.py --run` first.")
+        return 1
+
+    threshold = settings.profile.thresholds["save_to_tracker"]
+    with Database(db_path) as db:
+        rows = db.jobs_above_score(threshold)
+        stats = gather_stats(db.conn)
+        new_count = len(db.jobs_needing_alert(threshold))
+
+    email = build_digest(rows, new_count=new_count, stats=stats)
+
+    sender, recipient, secrets_path, token_path = _email_settings(settings)
+    if not sender or not recipient:
+        print("Gmail is not configured, so here is the digest instead:\n")
+        print(email.body_text)
+        print("\nTo have this emailed to you, see USER_GUIDE.md, 'Connecting Gmail'.")
+        return 0
+
+    from app.notifications.gmail import GmailNotConfigured, send_email
+
+    try:
+        send_email(email, sender, recipient, secrets_path, token_path)
+    except (GmailNotConfigured, Exception) as exc:  # noqa: BLE001
+        print(f"Could not send the digest ({exc}). Printing it instead:\n")
+        print(email.body_text)
+        return 1
+    print(f"Digest sent to {recipient} — {new_count} new match(es).")
+    return 0
+
+
+def cmd_update_sheets(settings: Settings) -> int:
+    """Syncs the tracker to Google Sheets. UNVERIFIED until it works for you."""
+    from app.sheets.sync import SheetsNotConfigured, sync_to_sheet
+
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database yet — run `python3 main.py --run` first.")
+        return 1
+
+    try:
+        with Database(db_path) as db:
+            written = sync_to_sheet(
+                db.conn,
+                spreadsheet_id=settings.secrets.sheets_spreadsheet_id,
+                service_account_json=settings.secrets.service_account_json,
+            )
+    except SheetsNotConfigured as exc:
+        print(f"Google Sheets is not set up yet:\n\n  {exc}\n")
+        print("See USER_GUIDE.md, section 'Connecting Google Sheets'.")
+        return 1
+    except Exception as exc:  # noqa: BLE001 — diagnostic
+        print(f"Sync failed: {exc}")
+        return 1
+    print(f"Synced {written} row(s) to Google Sheets.")
+    return 0
+
+
+def cmd_dashboard(settings: Settings) -> int:
+    import subprocess
+
+    target = Path(__file__).resolve().parent / "app" / "dashboard" / "app.py"
+    print("Starting the dashboard — it will open in your browser.")
+    print("Press Ctrl+C in this window to stop it.\n")
+    try:
+        subprocess.run(["streamlit", "run", str(target)], check=False)
+    except FileNotFoundError:
+        print("Streamlit is not installed — run: pip3 install -r requirements.txt")
+        return 1
+    return 0
+
+
+def cmd_insights(settings: Settings) -> int:
+    """The learning loop from Section 21."""
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database yet — run `python3 main.py --run` first.")
+        return 1
+    with Database(db_path) as db:
+        insights = learning_loop(db.conn)
+    for insight in insights:
+        print(f"\n  {insight.message}")
+        print(f"    Evidence: {insight.evidence}")
+        print(f"    Suggested: {insight.suggested_action}")
+    print()
+    return 0
+
+
 def cmd_init_db(settings: Settings) -> int:
     with Database(settings.secrets.database_path) as db:
         db.init_schema()
@@ -192,6 +312,8 @@ def main(argv: list[str] | None = None) -> int:
         ("--update-sheets", "Sync the CRM to Google Sheets"),
         ("--dashboard", "Launch the dashboard"),
         ("--diagnose", "Explain why jobs scored as they did"),
+        ("--insights", "What your application results suggest"),
+        ("--scheduled", "Only run if it is 08:00 UK time (for GitHub Actions)"),
         ("--status", "Show system status"),
         ("--check-config", "Validate your job profile"),
         ("--init-db", "Create the database"),
@@ -199,6 +321,25 @@ def main(argv: list[str] | None = None) -> int:
         parser.add_argument(flag, action="store_true", help=help_text)
 
     args = parser.parse_args(argv)
+
+    # --scheduled is a modifier, not a command. GitHub Actions fires this
+    # workflow at both 07:00 and 08:00 UTC; exactly one of those is 08:00
+    # in London depending on BST, and this gate lets only that one through.
+    scheduled = getattr(args, "scheduled", False)
+    if scheduled:
+        now = datetime.now(timezone.utc)
+        try:
+            profile_for_time = Settings.load().profile
+            target = profile_for_time.run_at_local_time
+            tz = profile_for_time.timezone
+        except ConfigError:
+            target, tz = "08:00", "Europe/London"
+        if not is_scheduled_run_time(now, target, tz):
+            local = local_now(tz)
+            print(f"Not the scheduled hour ({local:%H:%M %Z}, target {target}) — exiting.")
+            return 0
+        args.scheduled = False
+
     chosen = [k for k, v in vars(args).items() if v]
     if not chosen:
         parser.print_help()
@@ -224,6 +365,11 @@ def main(argv: list[str] | None = None) -> int:
         "test_sources": cmd_test_sources,
         "run": cmd_run,
         "diagnose": cmd_diagnose,
+        "insights": cmd_insights,
+        "digest": cmd_digest,
+        "test_email": cmd_test_email,
+        "update_sheets": cmd_update_sheets,
+        "dashboard": cmd_dashboard,
     }[command](settings)
 
 

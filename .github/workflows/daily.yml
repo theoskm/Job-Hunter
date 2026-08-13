@@ -1,0 +1,71 @@
+name: Daily job search
+
+# GitHub Actions cron is UTC-only and does NOT shift for British Summer
+# Time. A single '0 8 * * *' would run at 08:00 UK in winter but 09:00 in
+# summer. So we trigger at BOTH 07:00 and 08:00 UTC, and main.py checks
+# the real Europe/London time and exits immediately unless it is genuinely
+# 08:00 there. Exactly one of the two triggers passes on any given day —
+# covered by five tests in tests/test_phase2_3.py.
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 08:00 UK during BST
+    - cron: '0 8 * * *'   # 08:00 UK during GMT
+  workflow_dispatch:       # lets you run it manually from the Actions tab
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Restores yesterday's database so the system remembers which jobs
+      # it has already seen and alerted on. Without this every run would
+      # treat every job as brand new and re-alert you daily.
+      - name: Restore previous database
+        uses: actions/cache@v4
+        with:
+          path: data/
+          key: job-hunter-db-${{ github.run_id }}
+          restore-keys: job-hunter-db-
+
+      - name: Run the daily search
+        env:
+          REED_API_KEY: ${{ secrets.REED_API_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          GMAIL_SENDER_ADDRESS: ${{ secrets.GMAIL_SENDER_ADDRESS }}
+          GMAIL_RECIPIENT_ADDRESS: ${{ secrets.GMAIL_RECIPIENT_ADDRESS }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+        run: python main.py --run --scheduled
+
+      - name: Save the results file
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-results-${{ github.run_number }}
+          path: |
+            data/latest_results.md
+            logs/
+          retention-days: 30
+          if-no-files-found: ignore
+
+      # Commits the results back to the repo. Two purposes: you get an
+      # email from GitHub when the file changes (a zero-setup digest until
+      # Gmail is configured), and the commit activity stops GitHub from
+      # auto-disabling this workflow after 60 days of no repo activity.
+      - name: Commit results
+        run: |
+          git config user.name "job-hunter-bot"
+          git config user.email "actions@github.com"
+          git add -f data/latest_results.md 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Daily results $(date -u +%Y-%m-%d)"
+          git push || true

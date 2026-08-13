@@ -14,15 +14,15 @@ every application yourself.
 | 1 | Connection audit | Complete |
 | 2 | Architecture & config | Complete, tested |
 | 3 | Database & CRM state | Complete, tested |
-| 4 | Collectors (Reed, Adzuna) | Not built |
-| 5 | Filtering & deduplication | Dedup key done; filters pending |
-| 6 | Scoring engine | Not built |
-| 7 | Google Sheets CRM | Not built |
-| 8 | Gmail alerts | Not built |
-| 9 | Scheduler | Not built |
-| 10 | Dashboard & analytics | Not built |
-| 11 | Full test suite | 26 tests passing |
-| 12 | Deployment & user guide | Not built |
+| 4 | Collectors (Reed, Adzuna) | Complete — Adzuna verified live |
+| 5 | Filtering & deduplication | Complete, tested |
+| 6 | Scoring engine | Complete, tested |
+| 7 | Google Sheets CRM | Built — **never tested live** |
+| 8 | Gmail alerts | Built — **never tested live** |
+| 9 | Scheduler (GitHub Actions) | Built, DST-safe, tested |
+| 10 | Dashboard & analytics | Complete |
+| 11 | Full test suite | 100 tests passing |
+| 12 | Deployment & user guide | Complete — see USER_GUIDE.md |
 
 ## Try it now
 
