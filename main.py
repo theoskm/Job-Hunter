@@ -19,15 +19,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from app.collectors.run import build_collectors
 from app.database.db import Database
 from app.timeutils import is_scheduled_run_time, local_now, utc_offset_hours
 from config.settings import ConfigError, Settings
 
 NOT_BUILT_YET = {
-    "run": "Phase 4-6 (collectors, filtering, scoring)",
+    "run": "Phase 5-6 (filtering and scoring)",
     "digest": "Phase 8 (Gmail)",
     "test_email": "Phase 8 (Gmail)",
-    "test_sources": "Phase 4 (collectors)",
     "update_sheets": "Phase 7 (Google Sheets)",
     "dashboard": "Phase 10 (dashboard)",
 }
@@ -97,6 +97,31 @@ def cmd_status(settings: Settings) -> int:
     return 0
 
 
+def cmd_test_sources(settings: Settings) -> int:
+    print("Testing each configured job source with one real, live query.\n")
+    collectors = build_collectors(settings.secrets)
+    overall_ok = True
+
+    for name, collector in collectors.items():
+        if not collector.is_configured:
+            print(f"  {name:<8} SKIPPED — no credentials in .env")
+            continue
+        try:
+            jobs = collector.search(keywords="Administrator", location="Croydon")
+            print(f"  {name:<8} OK — {len(jobs)} result(s) for a test 'Administrator' search")
+        except Exception as exc:  # noqa: BLE001 — deliberately broad: this is a diagnostic
+            print(f"  {name:<8} FAILED — {exc}")
+            overall_ok = False
+
+    print()
+    if overall_ok:
+        print("All configured sources responded. Nothing configured is not a failure —")
+        print("add REED_API_KEY to .env when you have it.")
+    else:
+        print("At least one configured source failed — check the message above against .env.")
+    return 0 if overall_ok else 1
+
+
 def cmd_init_db(settings: Settings) -> int:
     with Database(settings.secrets.database_path) as db:
         db.init_schema()
@@ -144,6 +169,7 @@ def main(argv: list[str] | None = None) -> int:
         "status": cmd_status,
         "check_config": cmd_check_config,
         "init_db": cmd_init_db,
+        "test_sources": cmd_test_sources,
     }[command](settings)
 
 
