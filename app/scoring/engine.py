@@ -28,6 +28,36 @@ def _count_matches(text: str, keywords: list[str]) -> int:
     return sum(1 for kw in keywords if kw in text)
 
 
+# Adzuna hard-truncates job descriptions at 500 characters. Confirmed
+# empirically: every job in a 15-job sample came back at exactly 500.
+# Four of the seven scoring components read description text, so on a
+# truncated advert their keyword searches mostly find nothing — and
+# "no keyword found in a 500-char snippet" is NOT evidence the job is a
+# poor match, it is an absence of information.
+#
+# When the text is detectably truncated we therefore raise the neutral
+# floor for those components, so an unknown scores as genuinely unknown
+# (mid-range) rather than as bad (near-zero). Scores from truncated
+# adverts are marked provisional in the reasoning field.
+TRUNCATION_THRESHOLD_CHARS = 495
+PROVISIONAL_FLOOR = 0.55
+
+
+def is_truncated(job: Job) -> bool:
+    """True when the advert text looks cut off by the source API."""
+    description = job.description or ""
+    if len(description) >= TRUNCATION_THRESHOLD_CHARS:
+        return True
+    return description.rstrip().endswith(("...", "\u2026"))
+
+
+def _floor_for(job: Job, normal_floor: float) -> float:
+    """Raise the neutral floor when the advert text is truncated."""
+    if is_truncated(job):
+        return max(normal_floor, PROVISIONAL_FLOOR)
+    return normal_floor
+
+
 def _scale(count: int, cap_count: int, max_points: int, base_fraction: float = 0.0) -> int:
     """
     Turns a keyword-hit count into a 0..max_points score.
@@ -59,7 +89,8 @@ def score_career_transition_fit(job: Job, profile: JobProfile) -> int:
 def score_transferable_skills(job: Job, profile: JobProfile) -> int:
     max_points = profile.scoring_weights["transferable_skills"]
     count = _count_matches(_job_text(job), profile.scoring_keywords("transferable_keywords"))
-    return _scale(count, cap_count=5, max_points=max_points, base_fraction=0.3)
+    return _scale(count, cap_count=5, max_points=max_points,
+                  base_fraction=_floor_for(job, 0.3))
 
 
 def score_accessibility(job: Job, profile: JobProfile) -> int:
@@ -68,7 +99,8 @@ def score_accessibility(job: Job, profile: JobProfile) -> int:
     positive = _count_matches(text, profile.scoring_keywords("accessibility_positive"))
     negative = _count_matches(text, profile.scoring_keywords("accessibility_negative"))
 
-    base = _scale(positive, cap_count=3, max_points=max_points, base_fraction=0.4)
+    base = _scale(positive, cap_count=3, max_points=max_points,
+                  base_fraction=_floor_for(job, 0.4))
     penalty = min(negative, 3) * (max_points * 0.15)
     return round(max(0, base - penalty))
 
@@ -76,7 +108,8 @@ def score_accessibility(job: Job, profile: JobProfile) -> int:
 def score_skills_match(job: Job, profile: JobProfile) -> int:
     max_points = profile.scoring_weights["skills_match"]
     count = _count_matches(_job_text(job), profile.scoring_keywords("skills_keywords"))
-    return _scale(count, cap_count=4, max_points=max_points, base_fraction=0.25)
+    return _scale(count, cap_count=4, max_points=max_points,
+                  base_fraction=_floor_for(job, 0.25))
 
 
 def score_salary(job: Job, profile: JobProfile) -> int:
@@ -119,7 +152,8 @@ def score_location(job: Job, profile: JobProfile) -> int:
 def score_career_development(job: Job, profile: JobProfile) -> int:
     max_points = profile.scoring_weights["career_development"]
     count = _count_matches(_job_text(job), profile.scoring_keywords("development_keywords"))
-    return _scale(count, cap_count=3, max_points=max_points, base_fraction=0.2)
+    return _scale(count, cap_count=3, max_points=max_points,
+                  base_fraction=_floor_for(job, 0.2))
 
 
 class ScoringEngine:

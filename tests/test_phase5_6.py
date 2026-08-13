@@ -303,3 +303,61 @@ class TestFullPipeline(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestTruncationAwareScoring(unittest.TestCase):
+    """
+    Adzuna truncates descriptions at 500 chars. Four of the seven scoring
+    components read description text, so without this handling a perfectly
+    good job scores low purely because the advert was cut off.
+    """
+
+    def setUp(self) -> None:
+        self.profile = JobProfile.load(PROFILE_PATH)
+        self.engine = ScoringEngine(self.profile)
+
+    def _job(self, description: str) -> Job:
+        return Job(
+            title="Operations Coordinator",
+            company="Example Ltd",
+            location="Croydon, Surrey",
+            salary_min=28000,
+            salary_max=30000,
+            date_posted="2026-08-12",
+            description=description,
+        )
+
+    def test_detects_500_char_truncation(self) -> None:
+        from app.scoring.engine import is_truncated
+
+        self.assertTrue(is_truncated(self._job("A" * 500)))
+        self.assertFalse(is_truncated(self._job("A" * 100)))
+
+    def test_detects_ellipsis_truncation(self) -> None:
+        from app.scoring.engine import is_truncated
+
+        self.assertTrue(is_truncated(self._job("Short advert that trails off...")))
+
+    def test_truncated_advert_scores_above_floor(self) -> None:
+        """A truncated advert with no keywords should score as 'unknown', not 'bad'."""
+        scored = self.engine.score_all([self._job("A" * 500)])[0]
+        # Without the fix this landed around 49; unknown should sit mid-range
+        self.assertGreater(scored.score, 55)
+
+    def test_full_advert_still_outscores_truncated_one(self) -> None:
+        """The fix must not flatten real signal — a good full advert still wins."""
+        rich = (
+            "Full training provided, no experience necessary, entry level. "
+            "Fast-paced, organised, coordinate, deadline, communication, teamwork. "
+            "Excel, Outlook, scheduling, documentation, records. "
+            "Career progression and professional development."
+        ) * 4
+        truncated_score = self.engine.score_all([self._job("A" * 500)])[0].score
+        full_score = self.engine.score_all([self._job(rich)])[0].score
+        self.assertGreater(full_score, truncated_score)
+
+    def test_short_complete_advert_not_treated_as_truncated(self) -> None:
+        """A genuinely short but complete advert keeps the normal (stricter) floors."""
+        from app.scoring.engine import is_truncated
+
+        self.assertFalse(is_truncated(self._job("Brief but complete advert text.")))
