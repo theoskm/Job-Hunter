@@ -154,6 +154,14 @@ class JobProfile:
             return "STRETCH"
         return "LOW"
 
+    @property
+    def salary_benchmark(self) -> dict[str, int]:
+        return self.raw["salary_benchmark"]
+
+    def scoring_keywords(self, category: str) -> list[str]:
+        """Lower-cased keyword list for a scoring category, e.g. 'skills_keywords'."""
+        return [k.lower() for k in self.raw["scoring_keywords"].get(category, [])]
+
     # ---- loading & validation --------------------------------------
     @classmethod
     def load(cls, path: Path | str = DEFAULT_PROFILE_PATH) -> "JobProfile":
@@ -226,6 +234,24 @@ class JobProfile:
         if not windows or sorted(windows) != windows:
             raise ConfigError(
                 "search.windows_days must be listed smallest first, e.g. [7, 14, 30]."
+            )
+
+        if "salary_benchmark" not in self.raw:
+            raise ConfigError("Missing salary_benchmark section.")
+        sb = self.raw["salary_benchmark"]
+        if sb.get("excellent", 0) <= sb.get("good", 0):
+            raise ConfigError("salary_benchmark.excellent must be greater than .good.")
+
+        if "scoring_keywords" not in self.raw:
+            raise ConfigError("Missing scoring_keywords section.")
+        required_categories = {
+            "accessibility_positive", "accessibility_negative", "skills_keywords",
+            "transferable_keywords", "career_fit_keywords", "development_keywords",
+        }
+        missing = required_categories - set(self.raw["scoring_keywords"])
+        if missing:
+            raise ConfigError(
+                "scoring_keywords is missing categories: " + ", ".join(sorted(missing))
             )
 
 

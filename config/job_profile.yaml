@@ -16,6 +16,68 @@ candidate:
     - "Junior Project Manager"
     - "Project Manager"
 
+  # ---------------------------------------------------------------
+  # Skills you can genuinely evidence from your CV. The scorer looks
+  # for these in job adverts to work out your Skills Match score.
+  # ADD TO THIS as you learn things (e.g. add "power bi" once you've
+  # actually used it). Don't add things you can't back up at interview.
+  # ---------------------------------------------------------------
+  skills:
+    - "microsoft 365"
+    - "microsoft office"
+    - "excel"
+    - "word"
+    - "outlook"
+    - "teams"
+    - "scheduling"
+    - "diary"
+    - "documentation"
+    - "record keeping"
+    - "records"
+    - "compliance"
+    - "stock"
+    - "inventory"
+    - "supplier"
+    - "contractor"
+    - "process improvement"
+    - "it support"
+    - "troubleshooting"
+    - "customer service"
+    - "training"
+    - "supervision"
+    - "data entry"
+    - "administration"
+
+  # ---------------------------------------------------------------
+  # Hospitality/general strengths. The scorer looks for these to work
+  # out your Transferable Skills score.
+  # ---------------------------------------------------------------
+  transferable_keywords:
+    - "fast-paced"
+    - "fast paced"
+    - "under pressure"
+    - "deadline"
+    - "prioritise"
+    - "prioritize"
+    - "organised"
+    - "organized"
+    - "coordinate"
+    - "coordination"
+    - "communication"
+    - "problem solving"
+    - "problem-solving"
+    - "teamwork"
+    - "team player"
+    - "leadership"
+    - "supervise"
+    - "quality"
+    - "multitask"
+    - "attention to detail"
+    - "stakeholder"
+    - "liaise"
+    - "flexible"
+    - "adaptable"
+
 # -------------------------------------------------------------
 # TARGET ROLES — searched in tier order. Add or remove freely.
 # -------------------------------------------------------------
@@ -119,6 +181,117 @@ thresholds:
   save_to_tracker: 70    # auto-add to CRM at or above this
   email_alert: 80        # individual Gmail alert at or above this
   urgent_alert: 90       # extra alert at or above this
+
+# -------------------------------------------------------------
+# SALARY SCORING — how a job's pay maps onto the salary_score
+# points in scoring_weights above. Below `floor` normally means
+# the job was already filtered out; `good` and `excellent` set
+# the top of the scale. Adjust these as your sense of the market
+# changes — nothing else needs to change alongside them.
+# -------------------------------------------------------------
+salary_benchmark:
+  good: 30000
+  excellent: 38000
+
+# -------------------------------------------------------------
+# SCORING KEYWORDS — this is what the automated scorer actually
+# reads for. It is a blunt instrument compared to a human reading
+# the full advert: it counts keyword hits, nothing more. Add
+# words you keep noticing in good adverts; remove ones giving
+# false positives.
+# -------------------------------------------------------------
+scoring_keywords:
+  accessibility_positive:
+    - "no experience necessary"
+    - "no experience required"
+    - "no previous experience"
+    - "training provided"
+    - "full training given"
+    - "full training will be given"
+    - "trainee"
+    - "graduate scheme"
+    - "apprentice"
+    - "apprenticeship"
+    - "entry level"
+    - "entry-level"
+    - "career changer"
+    - "would suit"
+    - "desirable but not essential"
+    - "not essential"
+
+  accessibility_negative:
+    - "years of experience essential"
+    - "years experience essential"
+    - "must have experience"
+    - "extensive experience"
+    - "proven track record"
+    - "senior"
+    - "minimum 3 years"
+    - "minimum 5 years"
+    - "minimum five years"
+    - "minimum three years"
+
+  skills_keywords:
+    - "excel"
+    - "microsoft office"
+    - "powerpoint"
+    - "outlook"
+    - "word"
+    - "teams"
+    - "crm"
+    - "reporting"
+    - "data entry"
+    - "data handling"
+    - "scheduling"
+    - "diary management"
+    - "invoicing"
+    - "spreadsheet"
+
+  transferable_keywords:
+    - "customer service"
+    - "customer-facing"
+    - "fast-paced"
+    - "fast paced"
+    - "under pressure"
+    - "attention to detail"
+    - "communication"
+    - "team player"
+    - "teamwork"
+    - "organised"
+    - "organized"
+    - "organisation"
+    - "multitask"
+    - "deadlines"
+    - "problem solving"
+    - "problem-solving"
+    - "reliable"
+    - "flexible"
+
+  career_fit_keywords:
+    - "project"
+    - "coordinator"
+    - "coordination"
+    - "operations"
+    - "pmo"
+    - "programme"
+    - "program"
+    - "scheme"
+    - "progression"
+    - "development programme"
+    - "career path"
+
+  development_keywords:
+    - "training"
+    - "progression"
+    - "development programme"
+    - "career development"
+    - "structured programme"
+    - "mentoring"
+    - "mentor"
+    - "learning and development"
+    - "l&d"
+    - "study support"
+    - "qualification"
 
 # -------------------------------------------------------------
 # SEARCH BEHAVIOUR

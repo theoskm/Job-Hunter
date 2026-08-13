@@ -21,11 +21,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from app.collectors.run import build_collectors
 from app.database.db import Database
+from app.pipeline import run_full_pipeline
 from app.timeutils import is_scheduled_run_time, local_now, utc_offset_hours
 from config.settings import ConfigError, Settings
 
 NOT_BUILT_YET = {
-    "run": "Phase 5-6 (filtering and scoring)",
     "digest": "Phase 8 (Gmail)",
     "test_email": "Phase 8 (Gmail)",
     "update_sheets": "Phase 7 (Google Sheets)",
@@ -94,6 +94,42 @@ def cmd_status(settings: Settings) -> int:
     print("  Phase 6  Scoring engine            not built")
     print("  Phase 7+ Sheets, Gmail, dashboard  not built")
     print()
+    return 0
+
+
+def cmd_run(settings: Settings) -> int:
+    print("Running the full search — this hits the real APIs and may take a minute.\n")
+    db_path = Path(settings.secrets.database_path)
+    with Database(db_path) as db:
+        db.init_schema()
+        report = run_full_pipeline(settings, db)
+
+    print(f"  Raw results found     : {report.raw_found}")
+    print(f"  Filtered out          : {report.filtered_out}  (salary floor / excluded words / too old)")
+    print(f"  Duplicates merged     : {report.duplicates_merged}")
+    print(f"  Scored                : {report.scored}")
+    print(f"  New in database       : {report.new_jobs}")
+    print(f"  Existing, refreshed   : {report.updated_jobs}")
+    print(f"  Scoring >= {settings.profile.thresholds['save_to_tracker']} (tracked): {report.saved_to_tracker}")
+
+    if report.source_errors:
+        print(f"\n  {len(report.source_errors)} quer(y/ies) failed and were skipped:")
+        for err in report.source_errors[:5]:
+            print(f"    - {err}")
+        if len(report.source_errors) > 5:
+            print(f"    ... and {len(report.source_errors) - 5} more")
+
+    if report.top_matches:
+        print("\nTop matches this run:")
+        for job in report.top_matches:
+            print(f"  {job.score:>3}  {job.priority:<10} {job.title} — {job.company}")
+    elif report.scored == 0:
+        print("\nNo sources returned results — check REED_API_KEY / ADZUNA_APP_ID / "
+              "ADZUNA_APP_KEY in .env, or run --test-sources to check credentials.")
+    else:
+        print(f"\nNothing scored {settings.profile.thresholds['save_to_tracker']}+ this run. "
+              "That's a real result, not a bug — check the database for the full list.")
+
     return 0
 
 
@@ -170,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
         "check_config": cmd_check_config,
         "init_db": cmd_init_db,
         "test_sources": cmd_test_sources,
+        "run": cmd_run,
     }[command](settings)
 
 
