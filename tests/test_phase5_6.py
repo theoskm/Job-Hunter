@@ -361,3 +361,50 @@ class TestTruncationAwareScoring(unittest.TestCase):
         from app.scoring.engine import is_truncated
 
         self.assertFalse(is_truncated(self._job("Brief but complete advert text.")))
+
+
+class TestJunkAndSeniorityFilters(unittest.TestCase):
+    """
+    Both filters came from real defects in a live run: a DPD placeholder
+    listing scored joint-top, and Adzuna's loose matching returned
+    Operations Manager / Field Service Manager against entry-level searches.
+    """
+
+    def _job(self, title: str) -> Job:
+        return Job(title=title, company="Example Ltd", location="Croydon, Surrey")
+
+    def test_rejects_placeholder_listings(self) -> None:
+        from app.filtering.filters import _is_junk_listing
+
+        self.assertIsNotNone(_is_junk_listing(self._job("Admin Purposes Only")))
+        self.assertIsNotNone(_is_junk_listing(self._job("TEST JOB - do not apply")))
+        self.assertIsNone(_is_junk_listing(self._job("Finance Administrator")))
+
+    def test_rejects_roles_above_entry_level(self) -> None:
+        from app.filtering.filters import _is_too_senior
+
+        for title in ("Operations Manager", "Field Service Manager",
+                      "Head of Operations", "Store Merchandising Team Leader"):
+            self.assertIsNotNone(_is_too_senior(self._job(title)), title)
+
+    def test_protects_target_titles_containing_manager_words(self) -> None:
+        """
+        The important one. These are on the candidate's own Tier 2/3 target
+        list — a naive 'reject anything containing manager' would delete
+        exactly the roles being searched for.
+        """
+        for title in ("Junior Project Manager", "Assistant Project Manager",
+                      "Management Trainee", "Operations Trainee",
+                      "Graduate Management Scheme"):
+            from app.filtering.filters import _is_too_senior
+
+            self.assertIsNone(_is_too_senior(self._job(title)), title)
+
+    def test_standard_target_titles_pass_both_filters(self) -> None:
+        from app.filtering.filters import _is_junk_listing, _is_too_senior
+
+        for title in ("Project Coordinator", "PMO Assistant", "Office Coordinator",
+                      "Business Support Coordinator", "Junior Administrator"):
+            job = self._job(title)
+            self.assertIsNone(_is_junk_listing(job), title)
+            self.assertIsNone(_is_too_senior(job), title)
