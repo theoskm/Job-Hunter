@@ -30,6 +30,8 @@ class PipelineReport:
     new_jobs: int = 0
     updated_jobs: int = 0
     saved_to_tracker: int = 0
+    window_days_used: int = 0
+    window_was_widened: bool = False
     source_errors: list[str] = field(default_factory=list)
     top_matches: list[Job] = field(default_factory=list)
 
@@ -51,7 +53,18 @@ def run_full_pipeline(settings: Settings, db: Database) -> PipelineReport:
     deduped = dedupe_batch(collection.jobs)
     report.duplicates_merged = deduped.duplicate_count
 
-    filtered = filter_jobs(deduped.unique, profile)
+    # Section 10 of the brief: try 7 days first, widen to 14 then 30 only
+    # if that isn't enough. filter_jobs previously always used the first
+    # window and nothing wider — found because a real job posted 13 days
+    # ago was silently dropped instead of being caught by the 14-day pass.
+    minimum_results = profile.raw["search"].get("minimum_results_before_widening", 10)
+    filtered = None
+    for index, window in enumerate(profile.search_windows):
+        filtered = filter_jobs(deduped.unique, profile, max_age_days=window)
+        report.window_days_used = window
+        report.window_was_widened = index > 0
+        if len(filtered.kept) >= minimum_results:
+            break
     report.filtered_out = filtered.rejected_count
 
     scorer = ScoringEngine(profile)

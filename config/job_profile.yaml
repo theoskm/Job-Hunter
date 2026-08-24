@@ -307,6 +307,20 @@ search:
     - "unpaid"
     - "door to door"
     - "cold calling"
+    # Added 24 Aug 2026: Adzuna's search matches loosely enough that
+    # skilled-trade and professionally-regulated roles were appearing in
+    # results for admin/coordinator searches — a Junior CNC Machinist and
+    # a Quantity Surveyor both scored in the top 10 of a real run. These
+    # have nothing to do with the target career path, so excluding them
+    # outright is more honest than hoping the scorer ranks them low enough.
+    - "cnc machinist"
+    - "quantity surveyor"
+    - "structural engineer"
+    - "electrician"
+    - "plumber"
+    - "welder"
+    - "hgv driver"
+    - "lgv driver"
 
 schedule:
   run_at_local_time: "08:00"

@@ -103,6 +103,8 @@ def cmd_run(settings: Settings) -> int:
         report = run_full_pipeline(settings, db)
 
     print(f"  Raw results found     : {report.raw_found}")
+    print(f"  Search window used    : {report.window_days_used} days"
+          + (" (widened — 7-day pass found too few)" if report.window_was_widened else ""))
     print(f"  Filtered out          : {report.filtered_out}  (salary floor / excluded words / too old)")
     print(f"  Duplicates merged     : {report.duplicates_merged}")
     print(f"  Scored                : {report.scored}")

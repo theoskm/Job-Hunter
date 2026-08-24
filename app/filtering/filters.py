@@ -111,14 +111,50 @@ ENTRY_LEVEL_QUALIFIERS = [
     "support", "administrator", "coordinator", "co-ordinator", "intern",
 ]
 
+# ---------------------------------------------------------------------
+# Domain relevance
+#
+# Found in a real run: "Junior CNC Machinist" and "Quantity Surveyor"
+# both reached the top 10. Neither has anything to do with admin,
+# operations or project work — they got through because
+# ENTRY_LEVEL_QUALIFIERS exists to protect titles like "Junior Project
+# Coordinator" from the seniority filter, and "junior" alone was enough,
+# regardless of what field the job was actually in.
+#
+# This check is separate on purpose: seniority asks "is this too senior",
+# relevance asks "is this even in the right field". A title needs to
+# clear both. Built from the words that actually appear across every
+# tier of the candidate's own target_roles list in job_profile.yaml —
+# if you retarget the search to a different field, update this list to
+# match.
+# ---------------------------------------------------------------------
+RELEVANT_DOMAIN_WORDS = [
+    "administrat", "assistant", "operation", "coordinat", "co-ordinat",
+    "business", "support", "project", "pmo", "office", "commercial",
+    "service", "schedul", "logistics", "resource", "account", "sales",
+    "procurement", "property", "maintenance", "facilities", "client",
+    "analyst", "officer", "compliance", "management",
+]
+
 
 def _is_too_senior(job: Job) -> str | None:
     """
     Returns the offending marker if the title looks above entry level.
-    A title carrying any entry-level qualifier is always allowed through —
+    A title carrying any entry-level qualifier is normally allowed through —
     "Assistant Project Manager" and "Management Trainee" must survive.
+
+    "senior" is the one exception, checked before that protection applies.
+    Unlike "manager" or "lead", which appear in genuine development-track
+    titles, "Senior X" in UK job titles specifically signals prior
+    experience in that exact specialisation is expected — "Senior Pensions
+    Administrator" is not entry-level just because it also says
+    "Administrator". A real job with this exact title reached a candidate's
+    top 10 before this check existed.
     """
     title = (job.title or "").lower()
+
+    if "senior" in title:
+        return "senior"
 
     if any(q in title for q in ENTRY_LEVEL_QUALIFIERS):
         return None
@@ -129,14 +165,25 @@ def _is_too_senior(job: Job) -> str | None:
     return None
 
 
+def _is_irrelevant_domain(job: Job) -> bool:
+    """
+    True if the title carries none of the candidate's target-field words.
+    Checked independently of _is_too_senior — an entry-level qualifier
+    protects a title from being rejected as too SENIOR, but must not also
+    exempt it from needing to be in the right field at all.
+    """
+    title = (job.title or "").lower()
+    return not any(word in title for word in RELEVANT_DOMAIN_WORDS)
+
+
 def filter_jobs(
     jobs: list[Job],
     profile: JobProfile,
     max_age_days: int | None = None,
 ) -> FilterResult:
     """
-    Applies, in order: junk listings, seniority, salary floor,
-    excluded keywords, posted-date window.
+    Applies, in order: junk listings, seniority, domain relevance,
+    salary floor, excluded keywords, posted-date window.
     A job is rejected on the first check it fails — the rejection reason
     records which one, for the run log and for debugging a search that
     is returning too few results.
@@ -154,6 +201,10 @@ def filter_jobs(
         too_senior = _is_too_senior(job)
         if too_senior:
             result.rejected.append((job, f"above entry level: title contains '{too_senior}'"))
+            continue
+
+        if _is_irrelevant_domain(job):
+            result.rejected.append((job, "outside target field: title matches none of your target keywords"))
             continue
 
         if not _passes_salary_floor(job, profile.minimum_salary):

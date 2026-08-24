@@ -8,6 +8,7 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+from datetime import date, timedelta
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -31,7 +32,7 @@ def _job(**overrides) -> Job:
         location="Croydon, Surrey",
         salary_min=28000,
         salary_max=32000,
-        date_posted="2026-08-10",
+        date_posted=date.today().isoformat(),  # was hardcoded — went stale within weeks
         description="Coordinate operations. Excellent Excel skills required.",
     )
     defaults.update(overrides)
@@ -66,7 +67,8 @@ class TestFiltering(unittest.TestCase):
         self.assertIn("excluded keyword", result.rejected[0][1])
 
     def test_old_job_rejected_by_default_window(self) -> None:
-        job = _job(date_posted="2025-01-01")  # long before the 7-day default window
+        old = (date.today() - timedelta(days=365)).isoformat()
+        job = _job(date_posted=old)  # always long before the 7-day window
         result = filter_jobs([job], self.profile, max_age_days=7)
         self.assertEqual(len(result.kept), 0)
         self.assertIn("posted more than", result.rejected[0][1])
@@ -77,7 +79,8 @@ class TestFiltering(unittest.TestCase):
         self.assertEqual(len(result.kept), 1)
 
     def test_recent_job_kept(self) -> None:
-        job = _job(date_posted="2026-08-11")
+        recent = (date.today() - timedelta(days=2)).isoformat()
+        job = _job(date_posted=recent)
         result = filter_jobs([job], self.profile, max_age_days=7)
         self.assertEqual(len(result.kept), 1)
 
@@ -211,6 +214,7 @@ class TestFullPipeline(unittest.TestCase):
 
     @patch("requests.get")
     def test_pipeline_end_to_end(self, mock_get: MagicMock) -> None:
+        recent_iso = (date.today() - timedelta(days=2)).isoformat() + "T09:00:00Z"
         adzuna_response = MagicMock()
         adzuna_response.status_code = 200
         adzuna_response.raise_for_status.return_value = None
@@ -223,7 +227,7 @@ class TestFullPipeline(unittest.TestCase):
                     "location": {"display_name": "Croydon, Surrey"},
                     "salary_min": 28000,
                     "salary_max": 32000,
-                    "created": "2026-08-11T09:00:00Z",
+                    "created": recent_iso,
                     "description": "No experience necessary, full training provided. Excel needed.",
                     "redirect_url": "https://www.adzuna.co.uk/jobs/details/1",
                 },
@@ -234,7 +238,7 @@ class TestFullPipeline(unittest.TestCase):
                     "location": {"display_name": "London"},
                     "salary_min": 0,
                     "salary_max": None,
-                    "created": "2026-08-11T09:00:00Z",
+                    "created": recent_iso,
                     "description": "Commission only, cold calling, door to door sales.",
                     "redirect_url": "https://www.adzuna.co.uk/jobs/details/2",
                 },
@@ -323,7 +327,7 @@ class TestTruncationAwareScoring(unittest.TestCase):
             location="Croydon, Surrey",
             salary_min=28000,
             salary_max=30000,
-            date_posted="2026-08-12",
+            date_posted=date.today().isoformat(),
             description=description,
         )
 
@@ -408,3 +412,62 @@ class TestJunkAndSeniorityFilters(unittest.TestCase):
             job = self._job(title)
             self.assertIsNone(_is_junk_listing(job), title)
             self.assertIsNone(_is_too_senior(job), title)
+
+
+class TestDomainRelevanceFilter(unittest.TestCase):
+    """
+    Found in the candidate's own live run: 'Junior CNC Machinist' and
+    'Quantity Surveyor' both reached the top 10, purely because 'junior'
+    was enough to survive the seniority filter regardless of field.
+    Seniority answers 'is this too senior'; this answers 'is this even
+    the right field'. A title must clear both.
+    """
+
+    def _job(self, title: str) -> Job:
+        return Job(title=title, company="Example Ltd", location="Croydon, Surrey")
+
+    def test_rejects_the_exact_titles_found_in_a_live_run(self) -> None:
+        from app.filtering.filters import _is_irrelevant_domain
+
+        for title in ("Quantity Surveyor (Luxury Interiors / Fit-Out)",
+                      "Junior CNC Machinist"):
+            self.assertTrue(_is_irrelevant_domain(self._job(title)), title)
+
+    def test_keeps_the_legitimate_admin_titles_from_the_same_run(self) -> None:
+        from app.filtering.filters import _is_irrelevant_domain
+
+        for title in ("Administrator", "Partnership Administrator",
+                      "Administrator Receptionist", "Production and Office Assistant",
+                      "Operation and compliance coordinator",
+                      "Graduate Operational Excellence Analyst",
+                      "Administration Officer"):
+            self.assertFalse(_is_irrelevant_domain(self._job(title)), title)
+
+    def test_all_target_tier_titles_still_pass_relevance(self) -> None:
+        """Every title in job_profile.yaml's target_roles must clear this filter."""
+        from app.filtering.filters import _is_irrelevant_domain
+
+        profile = JobProfile.load(PROFILE_PATH)
+        for title in profile.all_target_roles:
+            self.assertFalse(_is_irrelevant_domain(self._job(title)), title)
+
+    def test_senior_is_now_caught(self) -> None:
+        """'Senior' was missing from the marker list — a real job slipped through on it."""
+        from app.filtering.filters import _is_too_senior
+
+        self.assertIsNotNone(_is_too_senior(self._job("Senior Pensions Administrator")))
+
+    def test_full_pipeline_rejects_both_real_failures(self) -> None:
+        jobs = [
+            Job(title="Quantity Surveyor (Luxury Interiors / Fit-Out)",
+                company="Ernest Gordon Recruitment", location="London",
+                salary_min=35000, salary_max=45000),
+            Job(title="Junior CNC Machinist", company="Centronic LTD",
+                location="Croydon", salary_min=26000, salary_max=28000),
+            Job(title="Administrator", company="Rape Crisis South London",
+                location="Croydon", salary_min=24000, salary_max=26000),
+        ]
+        profile = JobProfile.load(PROFILE_PATH)
+        result = filter_jobs(jobs, profile, max_age_days=365)
+        kept_titles = [j.title for j in result.kept]
+        self.assertEqual(kept_titles, ["Administrator"])
