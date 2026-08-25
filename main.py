@@ -295,6 +295,53 @@ def cmd_insights(settings: Settings) -> int:
     return 0
 
 
+def cmd_reset_db(settings: Settings) -> int:
+    """
+    Wipes all tracked jobs and starts fresh. Use this once, now, to clear
+    out rows from before the domain-relevance and seniority fixes existed.
+
+    Refuses automatically if any job has a status you set yourself
+    (APPLIED, INTERVIEW, etc.) — that's real data a filter bug should
+    never be allowed to delete. Right now, in your database, nothing does.
+    """
+    from app.database.models import USER_OWNED_STATUSES
+
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database exists yet — nothing to reset.")
+        return 0
+
+    with Database(db_path) as db:
+        rows = db.conn.execute(
+            "SELECT COUNT(*) AS n FROM jobs WHERE status IN ({})".format(
+                ",".join("?" * len(USER_OWNED_STATUSES))
+            ),
+            tuple(USER_OWNED_STATUSES),
+        ).fetchone()
+        protected = rows["n"] if rows else 0
+        total = db.conn.execute("SELECT COUNT(*) AS n FROM jobs").fetchone()["n"]
+
+    if protected > 0:
+        print(f"Refusing to reset: {protected} job(s) have a status you set "
+              f"yourself (applied, interview, etc.). Deleting those would lose "
+              f"real data. Clear those manually first if you're certain.")
+        return 1
+
+    print(f"This will permanently delete all {total} tracked job(s). "
+          f"None have a status you set yourself, so nothing real is lost — "
+          f"this is only clearing search results.")
+    confirmation = input("Type 'yes' to continue: ").strip().lower()
+    if confirmation != "yes":
+        print("Cancelled — nothing was deleted.")
+        return 0
+
+    db_path.unlink()
+    with Database(db_path) as db:
+        db.init_schema()
+    print("Database reset. Run --run to search fresh.")
+    return 0
+
+
 def cmd_init_db(settings: Settings) -> int:
     with Database(settings.secrets.database_path) as db:
         db.init_schema()
@@ -319,6 +366,7 @@ def main(argv: list[str] | None = None) -> int:
         ("--status", "Show system status"),
         ("--check-config", "Validate your job profile"),
         ("--init-db", "Create the database"),
+        ("--reset-db", "Wipe tracked jobs and start fresh (protects any status you set)"),
     ):
         parser.add_argument(flag, action="store_true", help=help_text)
 
@@ -364,6 +412,7 @@ def main(argv: list[str] | None = None) -> int:
         "status": cmd_status,
         "check_config": cmd_check_config,
         "init_db": cmd_init_db,
+        "reset_db": cmd_reset_db,
         "test_sources": cmd_test_sources,
         "run": cmd_run,
         "diagnose": cmd_diagnose,
