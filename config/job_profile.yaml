@@ -181,6 +181,18 @@ thresholds:
   save_to_tracker: 70    # auto-add to CRM at or above this
   email_alert: 80        # individual Gmail alert at or above this
   urgent_alert: 90       # extra alert at or above this
+  # Below this, no CV/cover letter gets generated — each one is a real
+  # API call, so this exists to stop the system spending money on jobs
+  # that were never worth applying to in the first place. Currently set
+  # equal to save_to_tracker; raise it if you want materials generated
+  # only for your strongest matches.
+  generate_materials_minimum_score: 70
+
+generation:
+  # claude-haiku-4-5-20251001 is fast and inexpensive, appropriate for
+  # structured drafting at volume. Swap to claude-sonnet-5 for higher
+  # quality on your final applications if cost isn't a concern.
+  model: "claude-haiku-4-5-20251001"
 
 # -------------------------------------------------------------
 # SALARY SCORING — how a job's pay maps onto the salary_score
@@ -323,7 +335,7 @@ search:
     - "lgv driver"
 
 schedule:
-  run_at_local_time: "08:00"
+  run_at_local_time: "09:00"
   timezone: "Europe/London"
 
 sources:

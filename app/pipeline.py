@@ -32,6 +32,9 @@ class PipelineReport:
     saved_to_tracker: int = 0
     window_days_used: int = 0
     window_was_widened: bool = False
+    materials_generated: int = 0
+    generation_errors: list[str] = field(default_factory=list)
+    generation_skipped_reason: str | None = None
     source_errors: list[str] = field(default_factory=list)
     top_matches: list[Job] = field(default_factory=list)
 
@@ -85,4 +88,75 @@ def run_full_pipeline(settings: Settings, db: Database) -> PipelineReport:
     report.saved_to_tracker = len(savable)
     report.top_matches = sorted(savable, key=lambda j: j.score or 0, reverse=True)[:5]
 
+    generate_for_jobs(scored_jobs, settings, db, report)
+
     return report
+
+
+def generate_for_jobs(
+    scored_jobs: list[Job], settings: Settings, db: Database, report: PipelineReport
+) -> None:
+    """
+    Generates CV suggestions and a cover letter for jobs crossing the
+    threshold, skipping any whose description hasn't changed since it was
+    last generated (analysis_hash caching) or whose API key isn't set.
+    Never raises — a generation failure must not take down the search.
+    """
+    from app.generation.tailor import (
+        CvContextMissing,
+        GenerationNotConfigured,
+        generate_materials,
+        load_cv_context,
+        materials_to_row,
+    )
+
+    threshold = settings.profile.thresholds.get(
+        "generate_materials_minimum_score", settings.profile.thresholds["save_to_tracker"]
+    )
+    candidates = [j for j in scored_jobs if (j.score or 0) >= threshold]
+    if not candidates:
+        return
+
+    api_key = settings.secrets.anthropic_api_key
+    if not api_key:
+        report.generation_skipped_reason = "ANTHROPIC_API_KEY not set in .env"
+        return
+
+    try:
+        cv_context = load_cv_context()
+    except CvContextMissing as exc:
+        report.generation_skipped_reason = str(exc)
+        return
+
+    model = settings.profile.raw.get("generation", {}).get(
+        "model", "claude-haiku-4-5-20251001"
+    )
+
+    for job in candidates:
+        existing = db.find_by_canonical_key(job.canonical_key)
+        if existing and not db.needs_ai_analysis(job.canonical_key, job.description_hash):
+            continue  # unchanged since last generation — do not spend money again
+
+        try:
+            materials = generate_materials(
+                api_key=api_key,
+                cv_context=cv_context,
+                job_title=job.title,
+                company=job.company,
+                job_description=job.description or "",
+                model=model,
+            )
+        except Exception as exc:  # noqa: BLE001 — one bad generation must not stop the rest
+            report.generation_errors.append(f"{job.title} at {job.company}: {exc}")
+            continue
+
+        job_id = existing["job_id"] if existing else job.job_id
+        row = materials_to_row(materials)
+        row["analysis_hash"] = job.description_hash
+        assignments = ", ".join(f"{col} = ?" for col in row)
+        db.conn.execute(
+            f"UPDATE jobs SET {assignments} WHERE job_id = ?",
+            [*row.values(), job_id],
+        )
+        db.conn.commit()
+        report.materials_generated += 1

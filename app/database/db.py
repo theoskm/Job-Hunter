@@ -45,7 +45,24 @@ class Database:
     def init_schema(self) -> None:
         with SCHEMA_PATH.open("r", encoding="utf-8") as fh:
             self.conn.executescript(fh.read())
+        self._migrate_add_missing_columns()
         self.conn.commit()
+
+    def _migrate_add_missing_columns(self) -> None:
+        """
+        Adds columns introduced after a database already existed, so
+        upgrading the code never requires --reset-db. Safe to call on
+        every startup — checks what's there before adding anything.
+        """
+        existing = {row["name"] for row in self.conn.execute("PRAGMA table_info(jobs)")}
+        new_columns = {
+            "cv_suggestions": "TEXT",
+            "cover_letter_draft": "TEXT",
+            "ats_keywords": "TEXT",
+        }
+        for column, sql_type in new_columns.items():
+            if column not in existing:
+                self.conn.execute(f"ALTER TABLE jobs ADD COLUMN {column} {sql_type}")
 
     def close(self) -> None:
         self.conn.close()

@@ -56,6 +56,14 @@ CREATE TABLE IF NOT EXISTS jobs (
     description_hash      TEXT,
     analysis_hash         TEXT,
 
+    -- Generated application materials (Phase 13). Populated only for jobs
+    -- crossing generate_materials_minimum_score, and only regenerated when
+    -- analysis_hash no longer matches description_hash — an LLM call costs
+    -- real money, unlike everything else in this schema.
+    cv_suggestions        TEXT,
+    cover_letter_draft    TEXT,
+    ats_keywords          TEXT,          -- JSON array
+
     -- Lifecycle
     first_seen            TEXT NOT NULL,
     last_updated          TEXT NOT NULL,

@@ -6,6 +6,9 @@ requests>=2.31.0
 # Phase 6 — AI analysis response validation
 pydantic>=2.0
 
+# Phase 13 — CV and cover letter generation
+anthropic>=0.40.0
+
 # Phase 7 — Google Sheets CRM
 google-api-python-client>=2.100.0
 google-auth>=2.23.0

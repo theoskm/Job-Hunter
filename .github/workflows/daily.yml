@@ -1,15 +1,15 @@
 name: Daily job search
 
 # GitHub Actions cron is UTC-only and does NOT shift for British Summer
-# Time. A single '0 8 * * *' would run at 08:00 UK in winter but 09:00 in
-# summer. So we trigger at BOTH 07:00 and 08:00 UTC, and main.py checks
+# Time. A single '0 9 * * *' would run at 09:00 UK in winter but 10:00 in
+# summer. So we trigger at BOTH 08:00 and 09:00 UTC, and main.py checks
 # the real Europe/London time and exits immediately unless it is genuinely
-# 08:00 there. Exactly one of the two triggers passes on any given day —
+# 09:00 there. Exactly one of the two triggers passes on any given day —
 # covered by five tests in tests/test_phase2_3.py.
 on:
   schedule:
-    - cron: '0 7 * * *'   # 08:00 UK during BST
-    - cron: '0 8 * * *'   # 08:00 UK during GMT
+    - cron: '0 8 * * *'   # 09:00 UK during BST
+    - cron: '0 9 * * *'   # 09:00 UK during GMT
   workflow_dispatch:       # lets you run it manually from the Actions tab
 
 jobs:

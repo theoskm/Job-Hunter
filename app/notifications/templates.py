@@ -105,6 +105,57 @@ def build_single_alert(row: sqlite3.Row) -> Email:
     return Email(subject=subject, body_text="\n".join(lines), body_html=body_html)
 
 
+def build_results_markdown(rows: list[sqlite3.Row], stats=None) -> str:
+    """
+    Real markdown for data/latest_results.md — what GitHub Actions commits
+    back to the repo after each scheduled run, and what GitHub emails you
+    about via its own "file changed" notification if Gmail isn't set up.
+
+    Pulls from the database, not just this run's fresh top 5, so the file
+    always reflects the best currently-known matches, same data source as
+    the email digest.
+    """
+    from datetime import datetime, timezone
+
+    lines = [
+        "# Job Hunter — Latest Results",
+        "",
+        f"_Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_",
+        "",
+    ]
+
+    if stats:
+        lines.append(
+            f"**{stats.total_jobs} tracked** · {stats.scoring_80_plus} scoring 80+ · "
+            f"{stats.scoring_70_plus} scoring 70+ · {stats.applied} applied · "
+            f"{stats.interviews} interview(s)"
+        )
+        lines.append("")
+
+    if not rows:
+        lines.append("No jobs currently meet the tracking threshold.")
+        return "\n".join(lines)
+
+    lines.append("## Top matches")
+    lines.append("")
+    for row in sorted(rows, key=lambda r: r["score"] or 0, reverse=True)[:15]:
+        emoji = PRIORITY_EMOJI.get(row["priority"] or "", "")
+        lines.append(f"### {row['score']}/100 {emoji} {row['title']} — {row['company']}")
+        lines.append(f"- **Location:** {row['location'] or 'not stated'}")
+        lines.append(f"- **Salary:** {_money(row)}")
+        lines.append(f"- **Status:** {row['status'] or 'NEW'}")
+        if row["direct_application_url"]:
+            lines.append(f"- [Open the advert]({row['direct_application_url']})")
+        matching = _skills_list(row["matching_skills"])
+        if matching:
+            lines.append(f"- **Matches:** {', '.join(matching)}")
+        lines.append("")
+
+    lines.append("---")
+    lines.append("_Nothing here is applied for automatically — every application is yours to send._")
+    return "\n".join(lines)
+
+
 def build_digest(rows: list[sqlite3.Row], new_count: int, stats=None) -> Email:
     """The daily summary — Section 18 of the brief."""
     total = len(rows)

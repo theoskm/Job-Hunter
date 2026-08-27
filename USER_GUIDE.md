@@ -189,6 +189,47 @@ before you configure Gmail.
 
 ---
 
+## Generating application materials
+
+For every job scoring 70+ (adjustable in `config/job_profile.yaml`), the
+system can draft CV bullet suggestions, ATS keywords, and a full cover
+letter — automatically, as part of `--run`.
+
+**This is the one part of the system that costs real money per use.**
+Everything else is free (Adzuna, Reed, the scoring engine). This calls
+the Anthropic API, which charges per use. It's deliberately gated behind
+your score threshold and cached against each job's description, so it
+never re-generates for a job that hasn't changed — but it isn't free.
+
+**Setup:**
+
+1. Go to **console.anthropic.com**, sign up or sign in
+2. Create an API key under **API Keys**
+3. Add it to `.env`: `ANTHROPIC_API_KEY=your-key-here`
+4. That's it — the next `--run` will draft materials for anything that qualifies
+
+**The one file that actually matters here: `config/cv_context.md`.**
+This is the *only* source of truth for what gets written about you. The
+prompt is built with explicit instructions to invent nothing beyond
+what's in that file. Keep it accurate — if you gain a skill or finish a
+qualification, update the file before generating anything else. A wrong
+or thin file produces wrong or thin output; there's no way around that.
+
+**Viewing what was generated:**
+
+```
+python3 main.py --show-materials <job_id>
+```
+
+Job IDs are visible via `--diagnose` or in the database directly.
+
+**Cost control, concretely:** raise `generate_materials_minimum_score`
+in `config/job_profile.yaml` above `save_to_tracker` if you want
+materials drafted only for your strongest matches, not everything that
+gets tracked.
+
+---
+
 ## Applying for jobs — the intended workflow
 
 The system never applies for anything. That was deliberate from the start.

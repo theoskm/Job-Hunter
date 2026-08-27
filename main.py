@@ -95,12 +95,33 @@ def cmd_status(settings: Settings) -> int:
     return 0
 
 
+def _write_results_file(settings: Settings, db: Database) -> Path:
+    """
+    Writes data/latest_results.md — referenced by the GitHub Actions
+    workflow since it was written, but nothing ever actually created it
+    until now. That's on me, not a setup problem on your end.
+    """
+    from app.analytics.stats import gather_stats
+    from app.notifications.templates import build_results_markdown
+
+    threshold = settings.profile.thresholds["save_to_tracker"]
+    rows = db.jobs_above_score(threshold)
+    stats = gather_stats(db.conn)
+    markdown = build_results_markdown(rows, stats=stats)
+
+    output_path = Path(settings.secrets.database_path).parent / "latest_results.md"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(markdown, encoding="utf-8")
+    return output_path
+
+
 def cmd_run(settings: Settings) -> int:
     print("Running the full search — this hits the real APIs and may take a minute.\n")
     db_path = Path(settings.secrets.database_path)
     with Database(db_path) as db:
         db.init_schema()
         report = run_full_pipeline(settings, db)
+        _write_results_file(settings, db)
 
     print(f"  Raw results found     : {report.raw_found}")
     print(f"  Search window used    : {report.window_days_used} days"
@@ -111,6 +132,15 @@ def cmd_run(settings: Settings) -> int:
     print(f"  New in database       : {report.new_jobs}")
     print(f"  Existing, refreshed   : {report.updated_jobs}")
     print(f"  Scoring >= {settings.profile.thresholds['save_to_tracker']} (tracked): {report.saved_to_tracker}")
+
+    if report.materials_generated:
+        print(f"  CV/cover letter drafted for {report.materials_generated} job(s)")
+    if report.generation_skipped_reason:
+        print(f"  Materials not generated: {report.generation_skipped_reason}")
+    if report.generation_errors:
+        print(f"  {len(report.generation_errors)} generation attempt(s) failed:")
+        for err in report.generation_errors[:3]:
+            print(f"    - {err}")
 
     if report.source_errors:
         print(f"\n  {len(report.source_errors)} quer(y/ies) failed and were skipped:")
@@ -342,6 +372,33 @@ def cmd_reset_db(settings: Settings) -> int:
     return 0
 
 
+def cmd_show_materials(settings: Settings, job_id: str) -> int:
+    db_path = Path(settings.secrets.database_path)
+    if not db_path.exists():
+        print("No database yet — run --run first.")
+        return 1
+    with Database(db_path) as db:
+        row = db.get_job(job_id)
+    if row is None:
+        print(f"No job with id {job_id!r}.")
+        return 1
+    if not row["cover_letter_draft"]:
+        print(f"No materials generated yet for {row['title']} at {row['company']}.")
+        print(f"It scored {row['score']}; the threshold to generate is "
+              f"{settings.profile.thresholds.get('generate_materials_minimum_score', 70)}.")
+        return 0
+
+    import json
+
+    print(f"{row['title']} — {row['company']}\n")
+    print("CV SUGGESTIONS")
+    for bullet in json.loads(row["cv_suggestions"] or "[]"):
+        print(f"  - {bullet}")
+    print(f"\nATS KEYWORDS\n  {', '.join(json.loads(row['ats_keywords'] or '[]'))}")
+    print(f"\nCOVER LETTER\n{row['cover_letter_draft']}")
+    return 0
+
+
 def cmd_init_db(settings: Settings) -> int:
     with Database(settings.secrets.database_path) as db:
         db.init_schema()
@@ -370,7 +427,17 @@ def main(argv: list[str] | None = None) -> int:
     ):
         parser.add_argument(flag, action="store_true", help=help_text)
 
+    parser.add_argument("--show-materials", metavar="JOB_ID",
+                         help="Show the generated CV suggestions and cover letter for a job id")
     args = parser.parse_args(argv)
+
+    if args.show_materials:
+        try:
+            settings = Settings.load()
+        except ConfigError as exc:
+            print(f"Configuration problem:\n\n  {exc}\n", file=sys.stderr)
+            return 1
+        return cmd_show_materials(settings, args.show_materials)
 
     # --scheduled is a modifier, not a command. GitHub Actions fires this
     # workflow at both 07:00 and 08:00 UTC; exactly one of those is 08:00
