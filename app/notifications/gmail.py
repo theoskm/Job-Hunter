@@ -79,6 +79,16 @@ def _load_credentials(client_secrets_path: str, token_path: str):
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())
     else:
+        import os
+
+        # GitHub Actions has no browser, so the consent flow would hang the
+        # run forever. Fail clearly instead; the token must come from the
+        # GMAIL_TOKEN_JSON secret, created once on your own Mac.
+        if os.environ.get("CI"):
+            raise GmailNotConfigured(
+                "No usable Gmail token in this cloud run. Add the GMAIL_TOKEN_JSON "
+                "repository secret (USER_GUIDE.md, 'Connecting Gmail', step 10)."
+            )
         secrets_file = Path(client_secrets_path)
         if not secrets_file.exists():
             raise GmailNotConfigured(

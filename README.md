@@ -19,9 +19,9 @@ every application yourself.
 | 6 | Scoring engine | Complete, tested |
 | 7 | Google Sheets CRM | Built — **never tested live** |
 | 8 | Gmail alerts | Built — **never tested live** |
-| 9 | Scheduler (GitHub Actions) | Built, DST-safe, tested |
+| 9 | Scheduler (GitHub Actions) | Fixed Oct 2026: once-per-day gate (old 09:00-only gate blocked every late run) |
 | 10 | Dashboard & analytics | Complete |
-| 11 | Full test suite | 100 tests passing |
+| 11 | Full test suite | 134 tests passing |
 | 12 | Deployment & user guide | Complete — see USER_GUIDE.md |
 
 ## Try it now

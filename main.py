@@ -25,7 +25,12 @@ from app.analytics.diagnose import describe_scores
 from app.analytics.stats import gather_stats, learning_loop
 from app.notifications.templates import build_digest, build_single_alert
 from app.pipeline import run_full_pipeline
-from app.timeutils import is_scheduled_run_time, local_now, utc_offset_hours
+from app.timeutils import (
+    is_scheduled_run_time,
+    local_now,
+    should_run_scheduled,
+    utc_offset_hours,
+)
 from config.settings import ConfigError, Settings
 
 NOT_BUILT_YET: dict[str, str] = {}
@@ -84,13 +89,11 @@ def cmd_status(settings: Settings) -> int:
         print(f"  Not created yet (will appear at {db_path} on first run)")
 
     print("\nBUILD PROGRESS")
-    print("  Phase 1  Connection audit          COMPLETE")
-    print("  Phase 2  Architecture & config     COMPLETE")
-    print("  Phase 3  Database                  COMPLETE")
-    print("  Phase 4  Collectors                not built")
-    print("  Phase 5  Filtering & dedup         partial (dedup key done)")
-    print("  Phase 6  Scoring engine            not built")
-    print("  Phase 7+ Sheets, Gmail, dashboard  not built")
+    print("  Phases 1-6  Collectors, filtering, scoring   COMPLETE (Reed + Adzuna live)")
+    print("  Phase 7     Google Sheets                    built, not yet tested live")
+    print("  Phase 8     Gmail                            built, not yet tested live")
+    print("  Phase 9     Daily schedule                   once-per-day gate (Oct 2026)")
+    print("  Phases 10+  Dashboard, tests, guide          COMPLETE")
     print()
     return 0
 
@@ -245,7 +248,8 @@ def cmd_digest(settings: Settings) -> int:
     with Database(db_path) as db:
         rows = db.jobs_above_score(threshold)
         stats = gather_stats(db.conn)
-        new_count = len(db.jobs_needing_alert(threshold))
+        new_ids = [r["job_id"] for r in db.jobs_needing_alert(threshold)]
+    new_count = len(new_ids)
 
     email = build_digest(rows, new_count=new_count, stats=stats)
 
@@ -256,6 +260,10 @@ def cmd_digest(settings: Settings) -> int:
         print("\nTo have this emailed to you, see USER_GUIDE.md, 'Connecting Gmail'.")
         return 0
 
+    if new_count == 0:
+        print(f"No new matches scoring {threshold}+ since the last email — not sending one.")
+        return 0
+
     from app.notifications.gmail import GmailNotConfigured, send_email
 
     try:
@@ -264,6 +272,11 @@ def cmd_digest(settings: Settings) -> int:
         print(f"Could not send the digest ({exc}). Printing it instead:\n")
         print(email.body_text)
         return 1
+
+    # Only mark as alerted once the email has actually gone, so a failed
+    # send is retried tomorrow rather than silently dropped.
+    with Database(db_path) as db:
+        db.mark_alert_sent(new_ids)
     print(f"Digest sent to {recipient} — {new_count} new match(es).")
     return 0
 
@@ -440,20 +453,25 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_show_materials(settings, args.show_materials)
 
     # --scheduled is a modifier, not a command. GitHub Actions fires this
-    # workflow at both 07:00 and 08:00 UTC; exactly one of those is 08:00
-    # in London depending on BST, and this gate lets only that one through.
+    # workflow twice a day and often hours late. The first run of each UK
+    # day at or after the target time does the search; the rest exit.
     scheduled = getattr(args, "scheduled", False)
+    marker_path: Path | None = None
     if scheduled:
         now = datetime.now(timezone.utc)
         try:
-            profile_for_time = Settings.load().profile
-            target = profile_for_time.run_at_local_time
-            tz = profile_for_time.timezone
+            loaded = Settings.load()
+            target = loaded.profile.run_at_local_time
+            tz = loaded.profile.timezone
+            marker_path = Path(loaded.secrets.database_path).parent / "last_scheduled_run.txt"
         except ConfigError:
-            target, tz = "08:00", "Europe/London"
-        if not is_scheduled_run_time(now, target, tz):
-            local = local_now(tz)
-            print(f"Not the scheduled hour ({local:%H:%M %Z}, target {target}) — exiting.")
+            target, tz = "09:00", "Europe/London"
+            marker_path = Path("data") / "last_scheduled_run.txt"
+        last_run = marker_path.read_text().strip() if marker_path.exists() else None
+        go, reason = should_run_scheduled(now, last_run, target, tz)
+        print(f"Scheduled run check: {reason}")
+        if not go:
+            print("Exiting without searching.")
             return 0
         args.scheduled = False
 
@@ -475,7 +493,7 @@ def main(argv: list[str] | None = None) -> int:
         print("Run 'python main.py --status' to see build progress.")
         return 2
 
-    return {
+    commands = {
         "status": cmd_status,
         "check_config": cmd_check_config,
         "init_db": cmd_init_db,
@@ -488,7 +506,21 @@ def main(argv: list[str] | None = None) -> int:
         "test_email": cmd_test_email,
         "update_sheets": cmd_update_sheets,
         "dashboard": cmd_dashboard,
-    }[command](settings)
+    }
+
+    # In scheduled mode, --run and --digest can be combined: search first,
+    # then email. Each runs once, in that order.
+    order = ["run", "digest"] if scheduled else [command]
+    to_run = [c for c in order if c in chosen] or [command]
+    exit_code = 0
+    for name in to_run:
+        exit_code = commands[name](settings) or exit_code
+
+    if scheduled and marker_path is not None and "run" in to_run:
+        now_local = local_now(settings.profile.timezone)
+        marker_path.parent.mkdir(parents=True, exist_ok=True)
+        marker_path.write_text(now_local.date().isoformat())
+    return exit_code
 
 
 if __name__ == "__main__":

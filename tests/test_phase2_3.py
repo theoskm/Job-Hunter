@@ -12,6 +12,7 @@ import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -19,7 +20,7 @@ from app.database.db import Database
 from app.database.models import (
     Job, JobSource, build_canonical_key, normalise_company, normalise_location,
 )
-from app.timeutils import is_scheduled_run_time, utc_offset_hours
+from app.timeutils import is_scheduled_run_time, should_run_scheduled, utc_offset_hours
 from config.settings import ConfigError, JobProfile
 
 from tests.mock_jobs import MOCK_ADZUNA_1, MOCK_REED_1, MOCK_REED_2
@@ -108,6 +109,46 @@ class TestDaylightSaving(unittest.TestCase):
     def test_tolerates_actions_scheduling_lag(self) -> None:
         late = datetime(2027, 1, 15, 8, 20, tzinfo=timezone.utc)
         self.assertTrue(is_scheduled_run_time(late))
+
+
+class TestOncePerDayGate(unittest.TestCase):
+    """GitHub starts scheduled runs hours late; the gate must still let one through."""
+
+    def test_five_hours_late_still_runs(self) -> None:
+        # The real case from 14 Oct 2026: started 13:25 UTC (14:25 BST)
+        late = datetime(2026, 10, 14, 13, 25, tzinfo=timezone.utc)
+        go, _ = should_run_scheduled(late, last_run_local_date="2026-10-13")
+        self.assertTrue(go)
+
+    def test_second_run_same_day_is_skipped(self) -> None:
+        later = datetime(2026, 10, 14, 14, 25, tzinfo=timezone.utc)
+        go, reason = should_run_scheduled(later, last_run_local_date="2026-10-14")
+        self.assertFalse(go)
+        self.assertIn("already", reason)
+
+    def test_first_ever_run_goes(self) -> None:
+        go, _ = should_run_scheduled(datetime(2026, 10, 14, 9, 0, tzinfo=timezone.utc), None)
+        self.assertTrue(go)
+
+    def test_winter_early_trigger_waits(self) -> None:
+        # 08:07 UTC in January is 08:07 UK, an hour before 09:00 — wait for the next one
+        early = datetime(2027, 1, 15, 8, 7, tzinfo=timezone.utc)
+        go, reason = should_run_scheduled(early, None)
+        self.assertFalse(go)
+        self.assertIn("early", reason)
+
+    def test_exactly_one_search_per_day_across_both_triggers(self) -> None:
+        for day in (datetime(2027, 1, 15), datetime(2027, 7, 15),
+                    datetime(2027, 3, 28), datetime(2027, 10, 31)):
+            last = None
+            searches = 0
+            for hour in (8, 9, 13, 14):   # on-time triggers, then hours-late ones
+                now = datetime(day.year, day.month, day.day, hour, 7, tzinfo=timezone.utc)
+                go, _ = should_run_scheduled(now, last)
+                if go:
+                    searches += 1
+                    last = now.astimezone(ZoneInfo("Europe/London")).date().isoformat()
+            self.assertEqual(searches, 1, f"{day:%Y-%m-%d}: expected one search")
 
 
 class TestNormalisation(unittest.TestCase):

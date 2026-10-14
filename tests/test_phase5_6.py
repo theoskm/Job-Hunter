@@ -279,7 +279,7 @@ class TestFullPipeline(unittest.TestCase):
                 "company": {"display_name": "Bright Facilities Ltd"},
                 "location": {"display_name": "Croydon, Surrey"},
                 "salary_min": 28000, "salary_max": 32000,
-                "created": "2026-08-11T09:00:00Z",
+                "created": (date.today() - timedelta(days=1)).isoformat() + "T09:00:00Z",
                 "description": "Coordinate operations.",
                 "redirect_url": "https://www.adzuna.co.uk/jobs/details/1",
             }]

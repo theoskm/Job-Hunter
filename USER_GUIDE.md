@@ -139,6 +139,29 @@ asked again.
 
 **The `credentials` folder is gitignored** — it never goes to GitHub.
 
+### Making the daily cloud run email you too
+
+The steps above only make email work on your Mac. The daily run happens
+on GitHub's computers, which can't open a browser to ask your permission,
+so they need a copy of the saved token.
+
+9. Back in Google Cloud: **APIs & Services → OAuth consent screen →
+   Publish app** (move it from *Testing* to *In production*). While it is
+   in Testing, Google expires the token every 7 days and the emails stop.
+   You'll still see the "unverified app" warning; that's fine for your own
+   use. If you publish after step 8, delete `credentials/gmail_token.json`
+   and run `python3 main.py --test-email` again to get a long-lived token.
+10. Open `credentials/gmail_token.json` in TextEdit, select all, copy.
+    On github.com: repo → **Settings → Secrets and variables → Actions →
+    New repository secret**, name `GMAIL_TOKEN_JSON`, paste, save.
+11. Add two more secrets the same way: `GMAIL_SENDER_ADDRESS` and
+    `GMAIL_RECIPIENT_ADDRESS` (your Gmail address in both).
+12. **Actions** tab → **Daily job search** → **Run workflow**. You get an
+    email if anything new scored 70+. If nothing did, no email is sent;
+    the run log says so.
+
+The token can only *send* email as you. It cannot read your inbox.
+
 ---
 
 ## Connecting Google Sheets
