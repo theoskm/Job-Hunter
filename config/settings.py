@@ -39,6 +39,7 @@ class Secrets:
     reed_api_key: str = ""
     adzuna_app_id: str = ""
     adzuna_app_key: str = ""
+    jooble_api_key: str = ""
     anthropic_api_key: str = ""
     gmail_sender: str = ""
     gmail_recipient: str = ""
@@ -57,6 +58,7 @@ class Secrets:
             reed_api_key=g("REED_API_KEY", "") or "",
             adzuna_app_id=g("ADZUNA_APP_ID", "") or "",
             adzuna_app_key=g("ADZUNA_APP_KEY", "") or "",
+            jooble_api_key=g("JOOBLE_API_KEY", "") or "",
             anthropic_api_key=g("ANTHROPIC_API_KEY", "") or "",
             gmail_sender=g("GMAIL_SENDER_ADDRESS", "") or "",
             gmail_recipient=g("GMAIL_RECIPIENT_ADDRESS", "") or "",
@@ -73,6 +75,7 @@ class Secrets:
         return {
             "reed": bool(self.reed_api_key),
             "adzuna": bool(self.adzuna_app_id and self.adzuna_app_key),
+            "jooble": bool(self.jooble_api_key),
         }
 
 

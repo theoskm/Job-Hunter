@@ -19,6 +19,7 @@ from dataclasses import dataclass, field
 
 from app.collectors.adzuna import AdzunaCollector
 from app.collectors.base import CollectorError
+from app.collectors.jooble import JoobleCollector
 from app.collectors.reed import ReedCollector
 from app.database.models import Job
 from config.settings import JobProfile, Secrets
@@ -51,6 +52,7 @@ def build_collectors(secrets: Secrets) -> dict[str, object]:
     return {
         "reed": ReedCollector(api_key=secrets.reed_api_key),
         "adzuna": AdzunaCollector(app_id=secrets.adzuna_app_id, app_key=secrets.adzuna_app_key),
+        "jooble": JoobleCollector(api_key=secrets.jooble_api_key),
     }
 
 
