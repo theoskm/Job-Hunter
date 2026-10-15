@@ -10,6 +10,7 @@ that costs more).
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 
 from app.collectors.base import is_within_days
@@ -44,6 +45,84 @@ def _passes_salary_floor(job: Job, minimum_salary: int) -> bool:
     if job.salary_min is not None:
         return job.salary_min >= minimum_salary
     return True
+
+
+# ---------------------------------------------------------------------
+# Experience required
+#
+# Added 15 Oct 2026 after the first real run: almost everything near the
+# top asked for prior experience. Matched against the advert text, so it
+# only works as well as the text available. Reed adverts are fetched in
+# full before this runs (see app/collectors/reed.py fetch_full_description);
+# Adzuna only ever gives ~500 characters.
+# ---------------------------------------------------------------------
+_NUM = r"(?:\d+|one|two|three|four|five|six)"
+EXPERIENCE_REQUIRED_PATTERNS = [
+    # "2 years experience", "3+ years' experience", "1-2 years of relevant experience"
+    rf"\b{_NUM}\s*\+?\s*(?:-|to)?\s*{_NUM}?\s*\+?\s*years?[’']?\s+(?:of\s+)?(?:\w+\s+){{0,3}}experience",
+    # "minimum of 2 years", "at least one year"
+    rf"\b(?:minimum|at least|min\.?)\s+(?:of\s+)?{_NUM}\s+years?",
+    r"\bproven (?:experience|track record)",
+    r"\bprevious (?:experience (?:as|in|of|within|working)|\w+ experience)",
+    r"\bdemonstrable experience",
+    r"\bextensive experience",
+    r"\bexperience (?:is|will be) (?:essential|required|a must)",
+    r"\bmust have (?:previous |prior |relevant )?experience",
+    r"\bexperienced (?:administrator|coordinator|co-ordinator|assistant|advisor|adviser)",
+]
+_EXPERIENCE_RE = re.compile("|".join(EXPERIENCE_REQUIRED_PATTERNS), re.IGNORECASE)
+
+
+# If the sentence containing the phrase also says one of these, it's a
+# nice-to-have, not a requirement ("previous admin experience is
+# desirable", "no previous experience needed").
+_SOFTENERS = re.compile(
+    r"\b(?:desirable|preferred|preferable|advantageous|an advantage|beneficial|"
+    r"a bonus|a plus|helpful|ideally|not essential|not required|not necessary|"
+    r"no (?:previous |prior )?experience|don[’']?t need|do not need|"
+    r"isn[’']?t essential|full training)\b",
+    re.IGNORECASE,
+)
+
+
+def requires_experience(text: str) -> str | None:
+    """Returns the phrase that shows experience is required, or None."""
+    text = text or ""
+    for match in _EXPERIENCE_RE.finditer(text):
+        start = max(text.rfind(".", 0, match.start()), text.rfind("\n", 0, match.start())) + 1
+        end_candidates = [i for i in (text.find(".", match.end()), text.find("\n", match.end())) if i != -1]
+        end = min(end_candidates) if end_candidates else len(text)
+        if _SOFTENERS.search(text[start:end]):
+            continue
+        return match.group(0).strip()
+    return None
+
+
+def _above_salary_ceiling(salary_min, maximum_salary: int | None) -> bool:
+    """Only the LOWEST stated pay counts, so a £28k-£34k range still passes a £32k ceiling."""
+    return bool(maximum_salary and salary_min and salary_min > maximum_salary)
+
+
+def hard_rule_violation(
+    title: str | None, company: str | None, description: str | None,
+    salary_min, profile: JobProfile,
+) -> str | None:
+    """
+    The rules that apply to jobs already in the database as well as new
+    ones: blocked company, pay above the ceiling, experience required.
+    Returns the reason, or None if the job is fine.
+    """
+    company_text = " ".join((company or "").lower().split())
+    for name in profile.exclude_companies:
+        if name and name in company_text:
+            return f"blocked company: '{name}'"
+    if _above_salary_ceiling(salary_min, profile.maximum_salary):
+        return f"pays above £{profile.maximum_salary:,} (likely needs experience)"
+    if profile.reject_experience_required:
+        phrase = requires_experience(f"{title or ''} {description or ''}")
+        if phrase:
+            return f"asks for experience: '{phrase}'"
+    return None
 
 
 def _excluded_company(job: Job, exclude_companies: list[str]) -> str | None:
@@ -227,6 +306,16 @@ def filter_jobs(
         if not _passes_salary_floor(job, profile.minimum_salary):
             result.rejected.append((job, f"below minimum salary of £{profile.minimum_salary:,}"))
             continue
+
+        if _above_salary_ceiling(job.salary_min, profile.maximum_salary):
+            result.rejected.append((job, f"pays above £{profile.maximum_salary:,} (likely needs experience)"))
+            continue
+
+        if profile.reject_experience_required:
+            phrase = requires_experience(_job_text(job))
+            if phrase:
+                result.rejected.append((job, f"asks for experience: '{phrase}'"))
+                continue
 
         matched_exclusion = _contains_excluded_keyword(job, exclude_keywords)
         if matched_exclusion:

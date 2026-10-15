@@ -230,6 +230,20 @@ class Database:
         )
         self.conn.commit()
 
+    def delete_jobs(self, job_ids: list[str]) -> int:
+        """Deletes the given jobs and their linked rows. Returns how many."""
+        if not job_ids:
+            return 0
+        marks = ",".join("?" * len(job_ids))
+        for table in ("job_sources", "status_history"):
+            try:
+                self.conn.execute(f"DELETE FROM {table} WHERE job_id IN ({marks})", job_ids)
+            except sqlite3.OperationalError:
+                pass
+        self.conn.execute(f"DELETE FROM jobs WHERE job_id IN ({marks})", job_ids)
+        self.conn.commit()
+        return len(job_ids)
+
     def remove_jobs_from_companies(self, company_names: Iterable[str]) -> int:
         """
         Deletes tracked jobs from blocked companies. Jobs with a status you

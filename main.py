@@ -132,7 +132,7 @@ def cmd_run(settings: Settings) -> int:
     print(f"  Filtered out          : {report.filtered_out}  (salary floor / excluded words / too old)")
     print(f"  Duplicates merged     : {report.duplicates_merged}")
     if report.removed_blocked:
-        print(f"  Removed (blocked co.) : {report.removed_blocked}")
+        print(f"  Removed from tracker  : {report.removed_blocked}  (blocked company, pay too high, or asks for experience)")
     print(f"  Scored                : {report.scored}")
     print(f"  New in database       : {report.new_jobs}")
     print(f"  Existing, refreshed   : {report.updated_jobs}")

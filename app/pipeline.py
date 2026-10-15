@@ -16,7 +16,7 @@ from app.collectors.run import run_collection
 from app.database.db import Database
 from app.database.models import Job
 from app.deduplication.dedup import dedupe_batch
-from app.filtering.filters import filter_jobs
+from app.filtering.filters import filter_jobs, hard_rule_violation
 from app.scoring.engine import ScoringEngine
 from config.settings import Secrets, Settings
 
@@ -71,9 +71,24 @@ def run_full_pipeline(settings: Settings, db: Database) -> PipelineReport:
             break
     report.filtered_out = filtered.rejected_count
 
-    # Clear out anything already tracked from a company that has since been
-    # blocked. Never touches a job you've applied to or otherwise acted on.
-    report.removed_blocked = db.remove_jobs_from_companies(profile.exclude_companies)
+    # Fetch full Reed adverts for jobs that survived the cheap filters, then
+    # re-check them: the requirements section is usually past the cut-off
+    # of the search-result snippet. Capped so a first run can't make
+    # hundreds of extra calls; jobs already in the database are skipped.
+    kept = _enrich_reed_descriptions(filtered.kept, settings, db)
+    still_kept = []
+    for job in kept:
+        reason = hard_rule_violation(job.title, job.company, job.description, job.salary_min, profile)
+        if reason:
+            report.filtered_out += 1
+        else:
+            still_kept.append(job)
+    filtered.kept = still_kept
+
+    # Clear out anything already tracked that now breaks a rule (blocked
+    # company, pay above the ceiling, asks for experience). Never touches a
+    # job you've applied to or otherwise acted on.
+    report.removed_blocked = _remove_tracked_rule_breakers(db, profile)
 
     scorer = ScoringEngine(profile)
     scored_jobs: list[Job] = scorer.score_all(filtered.kept)
@@ -96,6 +111,47 @@ def run_full_pipeline(settings: Settings, db: Database) -> PipelineReport:
     generate_for_jobs(scored_jobs, settings, db, report)
 
     return report
+
+
+MAX_DETAIL_FETCHES_PER_RUN = 80
+
+
+def _enrich_reed_descriptions(jobs: list[Job], settings: Settings, db: Database) -> list[Job]:
+    from app.collectors.reed import ReedCollector
+
+    reed = ReedCollector(api_key=settings.secrets.reed_api_key)
+    if not reed.is_configured:
+        return jobs
+    fetched = 0
+    for job in jobs:
+        if fetched >= MAX_DETAIL_FETCHES_PER_RUN:
+            break
+        reed_ids = [s.source_job_id for s in job.sources if s.source == "reed" and s.source_job_id]
+        if not reed_ids:
+            continue
+        existing = db.find_by_canonical_key(job.canonical_key)
+        if existing is not None and len(existing["description"] or "") > 600:
+            job.description = existing["description"]  # already have the full advert
+            continue
+        full = reed.fetch_full_description(reed_ids[0])
+        fetched += 1
+        if full and len(full) > len(job.description or ""):
+            job.description = full
+    return jobs
+
+
+def _remove_tracked_rule_breakers(db: Database, profile) -> int:
+    from app.database.models import USER_OWNED_STATUSES
+
+    rows = db.conn.execute(
+        "SELECT job_id, title, company, description, salary_min, status FROM jobs"
+    ).fetchall()
+    doomed = [
+        r["job_id"] for r in rows
+        if (r["status"] or "NEW") not in USER_OWNED_STATUSES
+        and hard_rule_violation(r["title"], r["company"], r["description"], r["salary_min"], profile)
+    ]
+    return db.delete_jobs(doomed)
 
 
 def generate_for_jobs(

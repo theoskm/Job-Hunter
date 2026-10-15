@@ -29,6 +29,7 @@ from app.collectors.base import CollectorNotConfigured, CollectorRequestFailed, 
 from app.database.models import Job, JobSource
 
 SEARCH_URL = "https://www.reed.co.uk/api/1.0/search"
+DETAILS_URL = "https://www.reed.co.uk/api/1.0/jobs/{job_id}"
 REQUEST_TIMEOUT_SECONDS = 15
 
 
@@ -85,6 +86,32 @@ class ReedCollector:
 
         data = response.json()
         return [self._to_job(item) for item in data.get("results", [])]
+
+    def fetch_full_description(self, job_id: str) -> str | None:
+        """
+        Search results only carry the first few hundred characters of an
+        advert, which usually cuts off before the requirements section.
+        The details endpoint returns the whole thing (as HTML). Returns
+        plain text, or None on any failure; never raises.
+        """
+        if not self.is_configured or not job_id:
+            return None
+        try:
+            response = requests.get(
+                DETAILS_URL.format(job_id=job_id),
+                auth=(self.api_key, ""),
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+            html = response.json().get("jobDescription") or ""
+        except (requests.exceptions.RequestException, ValueError):
+            return None
+        import html as html_lib
+        import re
+
+        text = re.sub(r"<[^>]+>", " ", html)
+        text = html_lib.unescape(text)
+        return " ".join(text.split()) or None
 
     @staticmethod
     def _to_job(item: dict) -> Job:

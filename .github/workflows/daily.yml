@@ -96,7 +96,14 @@ jobs:
           if [ -f data/latest_results.md ]; then
             git add -f data/latest_results.md
             git diff --staged --quiet || git commit -m "Daily results $(date -u +%Y-%m-%d)"
-            git push
+            # If you pushed a change while this run was going, GitHub refuses
+            # the push. Fetch your change, put the results on top, try again.
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push && exit 0
+              echo "Push attempt $attempt failed, retrying..."
+              sleep 5
+            done
+            exit 1
           else
             echo "No results file this run (already searched today) - nothing to commit."
           fi

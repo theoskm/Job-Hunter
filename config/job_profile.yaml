@@ -201,9 +201,9 @@ generation:
 # the top of the scale. Adjust these as your sense of the market
 # changes — nothing else needs to change alongside them.
 # -------------------------------------------------------------
-salary_benchmark:
-  good: 30000
-  excellent: 38000
+salary_benchmark:   # lowered 15 Oct 2026 to match the entry-level pay band
+  good: 27000
+  excellent: 30000
 
 # -------------------------------------------------------------
 # SCORING KEYWORDS — this is what the automated scorer actually
@@ -313,6 +313,14 @@ search:
   windows_days: [7, 14, 30]
   minimum_results_before_widening: 10
   minimum_salary: 24000  # set 15 Oct 2026 (was 21000, briefly 28000). Jobs that don't state a salary are still kept
+  # Added 15 Oct 2026: jobs whose LOWEST stated pay is above this are
+  # dropped. High pay for admin/coordinator work almost always means
+  # several years' experience is expected. Raise it if you're missing out.
+  maximum_salary: 32000
+  # Added 15 Oct 2026: drop any job whose advert asks for previous
+  # experience ("2 years' experience", "proven experience as", "experience
+  # is essential" and similar). "No experience needed" is never caught.
+  reject_experience_required: true
 
   # WHAT the daily run searches for (updated 15 Oct 2026): any admin,
   # operations, logistics or project support role. Broad words on purpose,

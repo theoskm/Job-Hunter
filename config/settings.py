@@ -131,6 +131,15 @@ class JobProfile:
         return int(self.raw["search"]["minimum_salary"])
 
     @property
+    def maximum_salary(self) -> int | None:
+        value = self.raw["search"].get("maximum_salary")
+        return int(value) if value else None
+
+    @property
+    def reject_experience_required(self) -> bool:
+        return bool(self.raw["search"].get("reject_experience_required", False))
+
+    @property
     def exclude_companies(self) -> list[str]:
         return [c.lower().strip() for c in self.raw["search"].get("exclude_companies", []) or []]
 
