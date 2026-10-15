@@ -46,6 +46,15 @@ def _passes_salary_floor(job: Job, minimum_salary: int) -> bool:
     return True
 
 
+def _excluded_company(job: Job, exclude_companies: list[str]) -> str | None:
+    """Returns the blocked company name matched, or None."""
+    company = " ".join((job.company or "").lower().split())
+    for name in exclude_companies:
+        if name and name in company:
+            return name
+    return None
+
+
 def _contains_excluded_keyword(job: Job, exclude_keywords: list[str]) -> str | None:
     """Returns the matched keyword, or None if nothing excluded was found."""
     text = _job_text(job)
@@ -192,7 +201,14 @@ def filter_jobs(
     window = max_age_days if max_age_days is not None else profile.search_windows[0]
     exclude_keywords = profile.exclude_keywords
 
+    exclude_companies = profile.exclude_companies
+
     for job in jobs:
+        blocked = _excluded_company(job, exclude_companies)
+        if blocked:
+            result.rejected.append((job, f"blocked company: '{blocked}'"))
+            continue
+
         junk = _is_junk_listing(job)
         if junk:
             result.rejected.append((job, f"junk listing: title contains '{junk}'"))

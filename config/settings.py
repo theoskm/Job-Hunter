@@ -131,6 +131,10 @@ class JobProfile:
         return int(self.raw["search"]["minimum_salary"])
 
     @property
+    def exclude_companies(self) -> list[str]:
+        return [c.lower().strip() for c in self.raw["search"].get("exclude_companies", []) or []]
+
+    @property
     def exclude_keywords(self) -> list[str]:
         return [k.lower() for k in self.raw["search"].get("exclude_keywords", [])]
 

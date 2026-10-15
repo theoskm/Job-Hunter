@@ -131,6 +131,8 @@ def cmd_run(settings: Settings) -> int:
           + (" (widened — 7-day pass found too few)" if report.window_was_widened else ""))
     print(f"  Filtered out          : {report.filtered_out}  (salary floor / excluded words / too old)")
     print(f"  Duplicates merged     : {report.duplicates_merged}")
+    if report.removed_blocked:
+        print(f"  Removed (blocked co.) : {report.removed_blocked}")
     print(f"  Scored                : {report.scored}")
     print(f"  New in database       : {report.new_jobs}")
     print(f"  Existing, refreshed   : {report.updated_jobs}")

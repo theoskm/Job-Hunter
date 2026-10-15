@@ -30,6 +30,7 @@ class PipelineReport:
     new_jobs: int = 0
     updated_jobs: int = 0
     saved_to_tracker: int = 0
+    removed_blocked: int = 0
     window_days_used: int = 0
     window_was_widened: bool = False
     materials_generated: int = 0
@@ -69,6 +70,10 @@ def run_full_pipeline(settings: Settings, db: Database) -> PipelineReport:
         if len(filtered.kept) >= minimum_results:
             break
     report.filtered_out = filtered.rejected_count
+
+    # Clear out anything already tracked from a company that has since been
+    # blocked. Never touches a job you've applied to or otherwise acted on.
+    report.removed_blocked = db.remove_jobs_from_companies(profile.exclude_companies)
 
     scorer = ScoringEngine(profile)
     scored_jobs: list[Job] = scorer.score_all(filtered.kept)

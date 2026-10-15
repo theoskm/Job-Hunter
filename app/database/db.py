@@ -230,6 +230,35 @@ class Database:
         )
         self.conn.commit()
 
+    def remove_jobs_from_companies(self, company_names: Iterable[str]) -> int:
+        """
+        Deletes tracked jobs from blocked companies. Jobs with a status you
+        set yourself (APPLIED, INTERVIEW, etc.) are always kept.
+        Returns how many were removed.
+        """
+        from app.database.models import USER_OWNED_STATUSES
+
+        names = [n.lower() for n in company_names if n]
+        if not names:
+            return 0
+        rows = self.conn.execute("SELECT job_id, company, status FROM jobs").fetchall()
+        doomed = [
+            r["job_id"] for r in rows
+            if (r["status"] or "NEW") not in USER_OWNED_STATUSES
+            and any(n in " ".join((r["company"] or "").lower().split()) for n in names)
+        ]
+        if not doomed:
+            return 0
+        marks = ",".join("?" * len(doomed))
+        for table in ("job_sources", "status_history"):
+            try:
+                self.conn.execute(f"DELETE FROM {table} WHERE job_id IN ({marks})", doomed)
+            except sqlite3.OperationalError:
+                pass  # table not present in this schema
+        self.conn.execute(f"DELETE FROM jobs WHERE job_id IN ({marks})", doomed)
+        self.conn.commit()
+        return len(doomed)
+
     def needs_ai_analysis(self, canonical_key: str, description_hash: str) -> bool:
         """False when this exact description was already analysed — saves API spend."""
         row = self.find_by_canonical_key(canonical_key)

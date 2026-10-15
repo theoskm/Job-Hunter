@@ -313,6 +313,14 @@ search:
   windows_days: [7, 14, 30]
   minimum_results_before_widening: 10
   minimum_salary: 21000  # flexed down a little from 24000 on 9 Aug 2026 — a strong foot-in-door role can still clear the bar below the old floor
+  # Employers to never show. Added 15 Oct 2026: these advertise "trainee"
+  # roles with big salaries but are widely reported to be training
+  # providers selling a paid course, not employers hiring. They took 11 of
+  # the 12 top spots in the first real automated run. Matching is on the
+  # company name, ignoring capitals. Add a line to block another company.
+  exclude_companies:
+    - "itol recruit"
+    - "it career switch"
   exclude_keywords:
     - "commission only"
     - "self-employed"
