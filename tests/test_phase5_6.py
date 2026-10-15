@@ -465,7 +465,7 @@ class TestDomainRelevanceFilter(unittest.TestCase):
             Job(title="Junior CNC Machinist", company="Centronic LTD",
                 location="Croydon", salary_min=26000, salary_max=28000),
             Job(title="Administrator", company="Rape Crisis South London",
-                location="Croydon", salary_min=24000, salary_max=26000),
+                location="Croydon", salary_min=30000, salary_max=32000),
         ]
         profile = JobProfile.load(PROFILE_PATH)
         result = filter_jobs(jobs, profile, max_age_days=365)

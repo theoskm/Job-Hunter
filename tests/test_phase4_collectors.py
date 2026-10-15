@@ -283,5 +283,33 @@ class TestRunCollection(unittest.TestCase):
         self.assertFalse(run.has_any_success)
 
 
+class TestSearchAreas(unittest.TestCase):
+    """Searches every keyword in every area, with each area's own radius."""
+
+    @patch("requests.get")
+    def test_each_keyword_searched_in_each_area(self, mock_get: MagicMock) -> None:
+        mock_get.return_value = _mock_response(REED_SAMPLE_RESPONSE)
+        profile = JobProfile.load(PROFILE_PATH)
+        secrets = Secrets(reed_api_key="key", adzuna_app_id="", adzuna_app_key="")
+
+        run = run_collection(profile, secrets)
+
+        keywords = profile.raw["search"]["search_keywords"]
+        areas = profile.raw["search"]["search_areas"]
+        reed = next(r for r in run.source_results if r.source == "reed")
+        self.assertEqual(reed.queries_attempted, len(keywords) * len(areas))
+        searched = {(c.kwargs["params"]["locationName"], c.kwargs["params"]["distanceFromLocation"])
+                    for c in mock_get.call_args_list}
+        self.assertEqual(searched, {(a["name"], a["radius_miles"]) for a in areas})
+        self.assertTrue(all(c.kwargs["params"]["minimumSalary"] == profile.minimum_salary
+                            for c in mock_get.call_args_list))
+
+    @patch("requests.get")
+    def test_adzuna_gets_radius_in_km(self, mock_get: MagicMock) -> None:
+        mock_get.return_value = _mock_response(ADZUNA_SAMPLE_RESPONSE)
+        AdzunaCollector(app_id="id", app_key="key").search("Administrator", "Woking", distance_miles=15)
+        self.assertEqual(mock_get.call_args.kwargs["params"]["distance"], 24)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -49,6 +49,7 @@ class AdzunaCollector:
         results_per_page: int = 20,
         page: int = 1,
         full_time_only: bool = True,
+        distance_miles: int | None = None,
     ) -> list[Job]:
         if not self.is_configured:
             raise CollectorNotConfigured(self.name)
@@ -64,6 +65,8 @@ class AdzunaCollector:
         }
         if minimum_salary:
             params["salary_min"] = minimum_salary
+        if distance_miles:
+            params["distance"] = round(distance_miles * 1.609)  # Adzuna uses km
         if full_time_only:
             params["full_time"] = 1
 

@@ -312,7 +312,34 @@ search:
   # Try 7 days first; widen only if too few results
   windows_days: [7, 14, 30]
   minimum_results_before_widening: 10
-  minimum_salary: 21000  # flexed down a little from 24000 on 9 Aug 2026 — a strong foot-in-door role can still clear the bar below the old floor
+  minimum_salary: 28000  # raised 15 Oct 2026 (was 21000). Jobs that don't state a salary are still kept
+
+  # WHAT the daily run searches for (updated 15 Oct 2026): any admin,
+  # operations, logistics or project support role. Broad words on purpose,
+  # since each one catches many job titles. Each word costs one search per
+  # area per job board, so keep this list short.
+  search_keywords:
+    - "Administrator"
+    - "Administrative Assistant"
+    - "Operations Coordinator"
+    - "Operations Administrator"
+    - "Logistics Coordinator"
+    - "Logistics Administrator"
+    - "Project Support"
+    - "Project Coordinator"
+    - "Customer Service Administrator"   # added 15 Oct 2026
+    - "Customer Service Advisor"
+    - "Customer Service Coordinator"
+
+  # WHERE it searches: Surrey up to Central London. Croydon with a 20-mile
+  # radius reaches Central London and north/east Surrey; Woking with 15
+  # miles covers the rest of Surrey (Guildford, Farnham, Epsom, Leatherhead).
+  search_areas:
+    - name: "Croydon"
+      radius_miles: 20
+    - name: "Woking"
+      radius_miles: 15
+
   # Employers to never show. Added 15 Oct 2026: these advertise "trainee"
   # roles with big salaries but are widely reported to be training
   # providers selling a paid course, not employers hiring. They took 11 of

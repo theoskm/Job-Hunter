@@ -143,6 +143,7 @@ RELEVANT_DOMAIN_WORDS = [
     "service", "schedul", "logistics", "resource", "account", "sales",
     "procurement", "property", "maintenance", "facilities", "client",
     "analyst", "officer", "compliance", "management",
+    "transport", "supply chain", "shipping", "freight", "customer",
 ]
 
 

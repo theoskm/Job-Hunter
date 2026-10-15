@@ -63,7 +63,11 @@ def run_collection(profile: JobProfile, secrets: Secrets) -> CollectionRun:
     it never stops the rest of the run. Per Section 28 of the original brief.
     """
     collectors = build_collectors(secrets)
-    tier_1_roles = profile.raw["target_roles"]["tier_1"]
+    search_cfg = profile.raw.get("search", {})
+    keywords_list = search_cfg.get("search_keywords") or profile.raw["target_roles"]["tier_1"]
+    areas = search_cfg.get("search_areas") or [
+        {"name": PRIMARY_LOCATION, "radius_miles": PRIMARY_RADIUS_MILES}
+    ]
 
     all_jobs: list[Job] = []
     results: list[SourceRunResult] = []
@@ -74,21 +78,22 @@ def run_collection(profile: JobProfile, secrets: Secrets) -> CollectionRun:
             results.append(result)
             continue
 
-        for role in tier_1_roles:
-            result.queries_attempted += 1
-            try:
-                jobs = collector.search(
-                    keywords=role,
-                    location=PRIMARY_LOCATION,
-                    minimum_salary=profile.minimum_salary,
-                    **({"distance_miles": PRIMARY_RADIUS_MILES} if name == "reed" else {}),
-                )
-                result.jobs_found += len(jobs)
-                all_jobs.extend(jobs)
-            except CollectorError as exc:
-                result.queries_failed += 1
-                result.errors.append(f"{role}: {exc}")
-                continue  # one bad query must not stop the others
+        for area in areas:
+            for role in keywords_list:
+                result.queries_attempted += 1
+                try:
+                    jobs = collector.search(
+                        keywords=role,
+                        location=area["name"],
+                        minimum_salary=profile.minimum_salary,
+                        distance_miles=int(area.get("radius_miles", PRIMARY_RADIUS_MILES)),
+                    )
+                    result.jobs_found += len(jobs)
+                    all_jobs.extend(jobs)
+                except CollectorError as exc:
+                    result.queries_failed += 1
+                    result.errors.append(f"{role} / {area['name']}: {exc}")
+                    continue  # one bad query must not stop the others
 
         results.append(result)
 
