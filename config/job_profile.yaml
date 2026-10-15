@@ -178,14 +178,14 @@ priority_bands:
   # anything below `stretch` is LOW
 
 thresholds:
-  save_to_tracker: 70    # auto-add to CRM at or above this
+  save_to_tracker: 55    # tracked, in results file and email digest at or above this (lowered from 70 on 15 Oct 2026)
   email_alert: 80        # individual Gmail alert at or above this
   urgent_alert: 90       # extra alert at or above this
   # Below this, no CV/cover letter gets generated — each one is a real
   # API call, so this exists to stop the system spending money on jobs
-  # that were never worth applying to in the first place. Currently set
-  # equal to save_to_tracker; raise it if you want materials generated
-  # only for your strongest matches.
+  # that were never worth applying to in the first place. Kept at 70
+  # (above save_to_tracker) so only stronger matches cost anything;
+  # lower it if you want drafts for everything you are sent.
   generate_materials_minimum_score: 70
 
 generation:
@@ -312,7 +312,7 @@ search:
   # Try 7 days first; widen only if too few results
   windows_days: [7, 14, 30]
   minimum_results_before_widening: 10
-  minimum_salary: 28000  # raised 15 Oct 2026 (was 21000). Jobs that don't state a salary are still kept
+  minimum_salary: 24000  # set 15 Oct 2026 (was 21000, briefly 28000). Jobs that don't state a salary are still kept
 
   # WHAT the daily run searches for (updated 15 Oct 2026): any admin,
   # operations, logistics or project support role. Broad words on purpose,
