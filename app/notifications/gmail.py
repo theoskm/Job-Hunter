@@ -103,6 +103,49 @@ def _load_credentials(client_secrets_path: str, token_path: str):
     return creds
 
 
+def send_via_app_password(email: Email, sender: str, recipient: str, app_password: str) -> str:
+    """
+    Sends through Gmail's SMTP server using a Google app password.
+
+    Added 15 Oct 2026: the OAuth route works, but Google won't let a
+    personal, unverified project be "published", and unpublished projects
+    have their login expire every 7 days. An app password doesn't expire
+    (until you revoke it or change your Google password), so the daily
+    cloud run keeps working. Requires 2-Step Verification on the account.
+    """
+    import smtplib
+    import ssl
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+
+    message = MIMEMultipart("alternative")
+    message["To"] = recipient
+    message["From"] = sender
+    message["Subject"] = email.subject
+    message.attach(MIMEText(email.body_text, "plain", "utf-8"))
+    message.attach(MIMEText(email.body_html, "html", "utf-8"))
+
+    try:
+        # Use certifi's certificate list when available. Python installed from
+        # python.org on a Mac has no certificates of its own until you run its
+        # "Install Certificates" script, which gives CERTIFICATE_VERIFY_FAILED.
+        # certifi comes with `requests`, so it's already installed.
+        try:
+            import certifi
+            context = ssl.create_default_context(cafile=certifi.where())
+        except ImportError:
+            context = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context, timeout=30) as server:
+            server.login(sender, app_password)
+            server.sendmail(sender, [recipient], message.as_string())
+    except smtplib.SMTPAuthenticationError as exc:
+        raise GmailNotConfigured(
+            "Gmail rejected the app password. Check GMAIL_APP_PASSWORD (16 letters, "
+            "spaces don't matter) and that GMAIL_SENDER_ADDRESS is the account it was made for."
+        ) from exc
+    return "smtp"
+
+
 def send_email(
     email: Email,
     sender: str,
@@ -118,6 +161,14 @@ def send_email(
         raise GmailNotConfigured(
             "GMAIL_SENDER_ADDRESS and GMAIL_RECIPIENT_ADDRESS must both be set in .env"
         )
+
+    import os
+
+    # App password takes priority: it never expires, so it's the one that
+    # keeps the daily cloud run emailing you. OAuth stays as a fallback.
+    app_password = (os.environ.get("GMAIL_APP_PASSWORD") or "").replace(" ", "")
+    if app_password:
+        return send_via_app_password(email, sender, recipient, app_password)
 
     try:
         from googleapiclient.discovery import build
