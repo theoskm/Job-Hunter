@@ -257,13 +257,27 @@ def cmd_digest(settings: Settings) -> int:
                          weights=settings.profile.scoring_weights)
 
     sender, recipient, secrets_path, token_path = _email_settings(settings)
+    import os
+
+    in_github = bool(os.environ.get("GITHUB_ACTIONS"))
+    if in_github:
+        # These "::notice::" lines show on the run's summary page on GitHub,
+        # so you can see what happened to the email without opening the logs.
+        print(f"::notice::Email check: sender set={bool(sender)}, recipient set={bool(recipient)}, "
+              f"app password set={bool(os.environ.get('GMAIL_APP_PASSWORD'))}, "
+              f"new matches={new_count}")
     if not sender or not recipient:
+        if in_github:
+            print("::warning::No email sent: GMAIL_SENDER_ADDRESS / GMAIL_RECIPIENT_ADDRESS "
+                  "secrets are missing in GitHub (Settings > Secrets and variables > Actions).")
         print("Gmail is not configured, so here is the digest instead:\n")
         print(email.body_text)
         print("\nTo have this emailed to you, see USER_GUIDE.md, 'Connecting Gmail'.")
         return 0
 
     if new_count == 0:
+        if in_github:
+            print(f"::notice::No email today: nothing new scored {threshold}+ since the last one.")
         print(f"No new matches scoring {threshold}+ since the last email — not sending one.")
         return 0
 
@@ -272,6 +286,8 @@ def cmd_digest(settings: Settings) -> int:
     try:
         send_email(email, sender, recipient, secrets_path, token_path)
     except (GmailNotConfigured, Exception) as exc:  # noqa: BLE001
+        if in_github:
+            print(f"::error::Email failed to send: {exc}")
         print(f"Could not send the digest ({exc}). Printing it instead:\n")
         print(email.body_text)
         return 1
