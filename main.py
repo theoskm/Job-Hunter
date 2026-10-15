@@ -110,7 +110,7 @@ def _write_results_file(settings: Settings, db: Database) -> Path:
     threshold = settings.profile.thresholds["save_to_tracker"]
     rows = db.jobs_above_score(threshold)
     stats = gather_stats(db.conn)
-    markdown = build_results_markdown(rows, stats=stats)
+    markdown = build_results_markdown(rows, stats=stats, weights=settings.profile.scoring_weights)
 
     output_path = Path(settings.secrets.database_path).parent / "latest_results.md"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -253,7 +253,8 @@ def cmd_digest(settings: Settings) -> int:
         new_ids = [r["job_id"] for r in db.jobs_needing_alert(threshold)]
     new_count = len(new_ids)
 
-    email = build_digest(rows, new_count=new_count, stats=stats)
+    email = build_digest(rows, new_count=new_count, stats=stats,
+                         weights=settings.profile.scoring_weights)
 
     sender, recipient, secrets_path, token_path = _email_settings(settings)
     if not sender or not recipient:
