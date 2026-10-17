@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-16 13:13 UTC_
+_Last updated: 2026-10-17 12:09 UTC_
 
-**198 tracked** · 3 scoring 80+ · 20 scoring 70+ · 0 applied · 0 interview(s)
+**214 tracked** · 3 scoring 80+ · 24 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -11,7 +11,7 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Salary:** not stated
 - **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57449581)
+- [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57465069)
 
 ### 83/100 🟢 Client Review & Operations Administrator — TEMPLEGATE RECRUITMENT
 - **Location:** RG279HA
@@ -34,12 +34,26 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/warehouse-logistics-coordinator/57465105)
 
+### 78/100 🟡 Operational Administrator | Dartford — GXO Logistics
+- **Location:** DA15XT
+- **Salary:** £29,217
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (14/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford/57467375)
+
 ### 78/100 🟡 Operations Coordinator — Huntress
 - **Location:** Bracknell
 - **Salary:** £29,000–£35,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
+
+### 77/100 🟡 Transport Operations Administrator — HR Dept
+- **Location:** Lea Bridge, East London
+- **Salary:** £30,000
+- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/details/5931144816?utm_medium=api&utm_source=f390393e)
 
 ### 77/100 🟡 Logistics Coordinator — Michael Page Business Support
 - **Location:** South Croydon
@@ -111,6 +125,20 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/school-nursery-administrator-receptionist/57443468)
 
+### 73/100 🟡 Administrative Coordinator — Recruitment Solutions
+- **Location:** Sevenoaks
+- **Salary:** £28,000–£30,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (16/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrative-coordinator/57467833)
+
+### 73/100 🟡 Logistics Coordinator — Journey recruitment
+- **Location:** Wokingham
+- **Salary:** £25,000–£30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57467242)
+
 ### 71/100 🟡 Service Administrator — Mulberry Recruitment
 - **Location:** Aldershot
 - **Salary:** £26,000–£32,000
@@ -130,7 +158,7 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Salary:** £30,000–£35,000
 - **Why:** ✅ mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=zB2sU2PJ8RGndsMxFMANcw&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=Bul1oCPK8RGuD4oQsdnAvA&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
 
 ### 70/100 🟡 HR & Office Administrator — Claranet Limited
 - **Location:** WC2E7AA
@@ -151,7 +179,7 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Salary:** £24,960–£33,280
 - **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5926131615?se=JL19WGPJ8RG16v--kZPp7w&utm_medium=api&utm_source=f390393e&v=E93B9510920BA24A52F17C9AFD5A3AB77334123F)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5926131615?se=hiubpCPK8RGD3NuKZ_epjg&utm_medium=api&utm_source=f390393e&v=E93B9510920BA24A52F17C9AFD5A3AB77334123F)
 
 ### 69/100 🟠 Customer Service Advisor — Reed
 - **Location:** SL30HF
@@ -174,47 +202,19 @@ _Last updated: 2026-10-16 13:13 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/stores-logistics-operative/57466533)
 
+### 68/100 🟠 Logistics & Operations Administrator — The People Co
+- **Location:** Farringdon, Central London
+- **Salary:** £30,000–£32,000
+- **Why:** ✅ pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5930763031?se=Bul1oCPK8RGuD4oQsdnAvA&utm_medium=api&utm_source=f390393e&v=6384DDDC81AA7C1E288BB8430154132A719226E6)
+
 ### 68/100 🟠 IT Administration Assistant — The Hurlingham Club
 - **Location:** Putney, South West London
 - **Salary:** £19,000–£59,000
 - **Why:** ✅ suits skills from your current work (15/20), mentions skills you have (13/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10) · advert was cut short, so this is a rough score
 - **Status:** NEW
 - [Open the advert](https://www.adzuna.co.uk/jobs/details/5928851353?utm_medium=api&utm_source=f390393e)
-
-### 68/100 🟠 HR Administrator — Brook Street NMR
-- **Location:** Croydon, London
-- **Salary:** £40,560
-- **Why:** ✅ pay in your target range (15/15), good step towards project management (8/10), good location (5/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5928028242?utm_medium=api&utm_source=f390393e)
-
-### 68/100 🟠 Logistics Coordinator — Michael Page
-- **Location:** Croydon, London
-- **Salary:** £32,000–£35,000
-- **Why:** ✅ suits skills from your current work (15/20), pay in your target range (15/15), good location (5/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5927798828?se=enH6U2PJ8RG6k4pKWxwyUg&utm_medium=api&utm_source=f390393e&v=E976A77CF9A94F9FC024473A54EA0C1253A4C71B)
-
-### 68/100 🟠 Customer Service & Event Operations Executive — Lipton Media
-- **Location:** Farringdon, Central London
-- **Salary:** £30,000–£35,000
-- **Why:** ✅ entry-level friendly (21/30), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5927636329?se=tE87VWPJ8RGzB7k7dBWovw&utm_medium=api&utm_source=f390393e&v=81F93FA230BEF22C407BA76E6AF06565031A0577)
-
-### 68/100 🟠 Legal Personal Assistant — Eversheds Sutherland
-- **Location:** EC2V7WS
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/legal-personal-assistant/57435970)
-
-### 68/100 🟠 UK Sales Administrator — Workshop Recruitment
-- **Location:** Walton-On-Thames, Surrey
-- **Salary:** £28,000–£30,000
-- **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5919628129?se=ZJj5f5vI8RG7ctO7icvY9Q&utm_medium=api&utm_source=f390393e&v=B71A5D03EF51FD68247B1634DFFAE74F938AF630)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
