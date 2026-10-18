@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-17 12:09 UTC_
+_Last updated: 2026-10-18 12:35 UTC_
 
-**214 tracked** · 3 scoring 80+ · 24 scoring 70+ · 0 applied · 0 interview(s)
+**216 tracked** · 3 scoring 80+ · 24 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -11,7 +11,7 @@ _Last updated: 2026-10-17 12:09 UTC_
 - **Salary:** not stated
 - **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57465069)
+- [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57454515)
 
 ### 83/100 🟢 Client Review & Operations Administrator — TEMPLEGATE RECRUITMENT
 - **Location:** RG279HA
@@ -158,7 +158,7 @@ _Last updated: 2026-10-17 12:09 UTC_
 - **Salary:** £30,000–£35,000
 - **Why:** ✅ mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=Bul1oCPK8RGuD4oQsdnAvA&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=GolBcfDK8RGq65mh8wCbFA&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
 
 ### 70/100 🟡 HR & Office Administrator — Claranet Limited
 - **Location:** WC2E7AA
@@ -179,7 +179,7 @@ _Last updated: 2026-10-17 12:09 UTC_
 - **Salary:** £24,960–£33,280
 - **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5926131615?se=hiubpCPK8RGD3NuKZ_epjg&utm_medium=api&utm_source=f390393e&v=E93B9510920BA24A52F17C9AFD5A3AB77334123F)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5926131615?se=UAQTdvDK8RGjutuTSb6jOA&utm_medium=api&utm_source=f390393e&v=E93B9510920BA24A52F17C9AFD5A3AB77334123F)
 
 ### 69/100 🟠 Customer Service Advisor — Reed
 - **Location:** SL30HF
@@ -207,7 +207,7 @@ _Last updated: 2026-10-17 12:09 UTC_
 - **Salary:** £30,000–£32,000
 - **Why:** ✅ pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5930763031?se=Bul1oCPK8RGuD4oQsdnAvA&utm_medium=api&utm_source=f390393e&v=6384DDDC81AA7C1E288BB8430154132A719226E6)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5930763031?se=GolBcfDK8RGq65mh8wCbFA&utm_medium=api&utm_source=f390393e&v=6384DDDC81AA7C1E288BB8430154132A719226E6)
 
 ### 68/100 🟠 IT Administration Assistant — The Hurlingham Club
 - **Location:** Putney, South West London
