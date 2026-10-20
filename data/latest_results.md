@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-19 15:33 UTC_
+_Last updated: 2026-10-20 13:32 UTC_
 
-**227 tracked** · 4 scoring 80+ · 25 scoring 70+ · 0 applied · 0 interview(s)
+**236 tracked** · 5 scoring 80+ · 31 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -26,6 +26,13 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Why:** ✅ entry-level friendly (22/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/buying-administrator/57473103)
+
+### 81/100 🟢 Administrator — Reed
+- **Location:** KT27NU
+- **Salary:** £30,449
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrator/57464758)
 
 ### 80/100 🟢 Administrator — Michael Page Business Support
 - **Location:** London
@@ -54,6 +61,27 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
+
+### 77/100 🟡 Transport Operations Administrator — Cameron Clarke Associates
+- **Location:** Lea Bridge, East London
+- **Salary:** £30,000
+- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/details/5934518463?utm_medium=api&utm_source=f390393e)
+
+### 77/100 🟡 Transport Operations Administrator — Anonymous
+- **Location:** Walthamstow, East London
+- **Salary:** £30,000
+- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=mhaMqorM8RG4GPmddZJewA&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
+
+### 77/100 🟡 Transport Operations Administrator — Talent Finder
+- **Location:** East London, London
+- **Salary:** £30,000
+- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/details/5934274160?utm_medium=api&utm_source=f390393e)
 
 ### 77/100 🟡 Transport Operations Administrator — HR Dept
 - **Location:** Lea Bridge, East London
@@ -104,6 +132,13 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/export-seafreight-operator/57457940)
 
+### 74/100 🟡 Administrator — Morson Edge
+- **Location:** Farnham
+- **Salary:** £28,493
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (13/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrator/57472659)
+
 ### 74/100 🟡 Accounts Assistant —  Bond Recruitment 
 - **Location:** KT160DN
 - **Salary:** £28,000
@@ -153,6 +188,13 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/service-administrator/57437845)
 
+### 70/100 🟡 Care Coordinator — East London Care and Support Limited
+- **Location:** E138QP
+- **Salary:** not stated
+- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/care-coordinator/57475399)
+
 ### 70/100 🟡 Administrative Assistant Endoscopy — St George's University Hospitals NHS Foundation Trust
 - **Location:** Summerstown, South West London
 - **Salary:** £31,066
@@ -165,7 +207,7 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Salary:** £30,000–£35,000
 - **Why:** ✅ mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=0PzwadLL8RGX9ow4Acismg&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=mhaMqorM8RG4GPmddZJewA&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
 
 ### 70/100 🟡 HR & Office Administrator — Claranet Limited
 - **Location:** WC2E7AA
@@ -173,48 +215,6 @@ _Last updated: 2026-10-19 15:33 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/hr-office-administrator/57440397)
-
-### 70/100 🟡 Administrator — Team One Recruitment
-- **Location:** RH11QH
-- **Salary:** £24,500
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/administrator/57441198)
-
-### 69/100 🟠 Procurement Administrator — Rendall & Rittner
-- **Location:** WC2N5HS
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (20/20), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/procurement-administrator/57473131)
-
-### 69/100 🟠 Care Coordinator — Helping Hands
-- **Location:** SE279DL
-- **Salary:** £29,400–£31,000
-- **Why:** ✅ suits skills from your current work (15/20), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/care-coordinator/57472350)
-
-### 69/100 🟠 Administrator — Morson Edge
-- **Location:** Farnham
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/administrator/57472659)
-
-### 69/100 🟠 Customer Service Administrator — Sheridan Maine
-- **Location:** Farnborough, Hampshire
-- **Salary:** £24,960–£33,280
-- **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5926131615?se=QLWQb9LL8RG4GPmddZJewA&utm_medium=api&utm_source=f390393e&v=E93B9510920BA24A52F17C9AFD5A3AB77334123F)
-
-### 69/100 🟠 Customer Service Advisor — Reed
-- **Location:** SL30HF
-- **Salary:** £26,000–£28,500
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (13/15), training or progression mentioned (4/5) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-advisor/57448920)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
