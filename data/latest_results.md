@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-20 13:32 UTC_
+_Last updated: 2026-10-21 13:44 UTC_
 
-**236 tracked** · 5 scoring 80+ · 31 scoring 70+ · 0 applied · 0 interview(s)
+**257 tracked** · 5 scoring 80+ · 35 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -41,13 +41,6 @@ _Last updated: 2026-10-20 13:32 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/administrator/57463050)
 
-### 79/100 🟡 Warehouse & Logistics Coordinator — Recruitment Solutions
-- **Location:** Crawley
-- **Salary:** £28,000–£32,000
-- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (15/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/warehouse-logistics-coordinator/57465105)
-
 ### 78/100 🟡 Operational Administrator | Dartford — GXO Logistics
 - **Location:** DA15XT
 - **Salary:** £29,217
@@ -62,6 +55,13 @@ _Last updated: 2026-10-20 13:32 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
 
+### 77/100 🟡 Customer Service Coordinator — Reed
+- **Location:** HA35EQ
+- **Salary:** £29,000–£31,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-coordinator/57480330)
+
 ### 77/100 🟡 Transport Operations Administrator — Cameron Clarke Associates
 - **Location:** Lea Bridge, East London
 - **Salary:** £30,000
@@ -74,7 +74,7 @@ _Last updated: 2026-10-20 13:32 UTC_
 - **Salary:** £30,000
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=mhaMqorM8RG4GPmddZJewA&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=VFSZdVXN8RGj8oNsWVL4tA&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
 
 ### 77/100 🟡 Transport Operations Administrator — Talent Finder
 - **Location:** East London, London
@@ -167,6 +167,20 @@ _Last updated: 2026-10-20 13:32 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/school-nursery-administrator-receptionist/57443468)
 
+### 73/100 🟡 Operations Coordinator - Import & Export — Heathrow Personnel
+- **Location:** GU212AA
+- **Salary:** £32,000–£35,000
+- **Why:** ✅ suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-import-export/57480799)
+
+### 73/100 🟡 IT Support Engineer — ICT Solutions
+- **Location:** Wokingham
+- **Salary:** £30,000–£40,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/it-support-engineer/57480512)
+
 ### 73/100 🟡 Administrative Coordinator — Recruitment Solutions
 - **Location:** Sevenoaks
 - **Salary:** £28,000–£30,000
@@ -181,40 +195,26 @@ _Last updated: 2026-10-20 13:32 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57467242)
 
+### 72/100 🟡 Customer Service Administrator — Sheridan Maine
+- **Location:** GU111AF
+- **Salary:** £27,000–£29,000
+- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (13/15), pay in your target range (13/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57479116)
+
+### 71/100 🟡 Therapies Administrative Assistant — Homerton Healthcare NHS Foundation Trust
+- **Location:** Homerton, East London
+- **Salary:** £31,554–£33,270
+- **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/details/5936501374?utm_medium=api&utm_source=f390393e)
+
 ### 71/100 🟡 Service Administrator — Mulberry Recruitment
 - **Location:** Aldershot
 - **Salary:** £26,000–£32,000
 - **Why:** ✅ suits skills from your current work (18/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/service-administrator/57437845)
-
-### 70/100 🟡 Care Coordinator — East London Care and Support Limited
-- **Location:** E138QP
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/care-coordinator/57475399)
-
-### 70/100 🟡 Administrative Assistant Endoscopy — St George's University Hospitals NHS Foundation Trust
-- **Location:** Summerstown, South West London
-- **Salary:** £31,066
-- **Why:** ✅ suits skills from your current work (15/20), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5930274597?utm_medium=api&utm_source=f390393e)
-
-### 70/100 🟡 Funder Operations Administrator — Reed Specialist Recruitment
-- **Location:** Farringdon, Central London
-- **Salary:** £30,000–£35,000
-- **Why:** ✅ mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5929372750?se=mhaMqorM8RG4GPmddZJewA&utm_medium=api&utm_source=f390393e&v=02FFD91366651BD8E42B5B81F83B3941B7D686D3)
-
-### 70/100 🟡 HR & Office Administrator — Claranet Limited
-- **Location:** WC2E7AA
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/hr-office-administrator/57440397)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
