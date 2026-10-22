@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-21 13:44 UTC_
+_Last updated: 2026-10-22 13:44 UTC_
 
-**257 tracked** · 5 scoring 80+ · 35 scoring 70+ · 0 applied · 0 interview(s)
+**274 tracked** · 5 scoring 80+ · 38 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -74,7 +74,7 @@ _Last updated: 2026-10-21 13:44 UTC_
 - **Salary:** £30,000
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=VFSZdVXN8RGj8oNsWVL4tA&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=FDMVuR7O8RGup5F4Hf4wGw&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
 
 ### 77/100 🟡 Transport Operations Administrator — Talent Finder
 - **Location:** East London, London
@@ -96,6 +96,13 @@ _Last updated: 2026-10-21 13:44 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good location (5/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
+
+### 76/100 🟡 Operations Specialist — Rockpool Recruitment LTD
+- **Location:** Surrey
+- **Salary:** £32,000–£34,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-specialist/57482092)
 
 ### 76/100 🟡 Customer Service Advisor — Parkside Office Professional
 - **Location:** London
@@ -124,6 +131,13 @@ _Last updated: 2026-10-21 13:44 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57435296)
+
+### 75/100 🟡 Customer Service / Administrator — Mulberry Recruitment
+- **Location:** Guildford
+- **Salary:** £24,000–£28,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57483245)
 
 ### 75/100 🟡 Export Seafreight Operator — Uniserve
 - **Location:** RM188AA
@@ -195,26 +209,12 @@ _Last updated: 2026-10-21 13:44 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57467242)
 
-### 72/100 🟡 Customer Service Administrator — Sheridan Maine
-- **Location:** GU111AF
-- **Salary:** £27,000–£29,000
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (13/15), pay in your target range (13/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+### 72/100 🟡 Graduate Project Coordinator — Recruitment Solutions
+- **Location:** Tonbridge
+- **Salary:** £25,000–£27,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (18/20), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57479116)
-
-### 71/100 🟡 Therapies Administrative Assistant — Homerton Healthcare NHS Foundation Trust
-- **Location:** Homerton, East London
-- **Salary:** £31,554–£33,270
-- **Why:** ✅ suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5936501374?utm_medium=api&utm_source=f390393e)
-
-### 71/100 🟡 Service Administrator — Mulberry Recruitment
-- **Location:** Aldershot
-- **Salary:** £26,000–£32,000
-- **Why:** ✅ suits skills from your current work (18/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/service-administrator/57437845)
+- [Open the advert](https://www.reed.co.uk/jobs/graduate-project-coordinator/57483123)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
