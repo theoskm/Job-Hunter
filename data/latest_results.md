@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-23 13:21 UTC_
+_Last updated: 2026-10-24 12:39 UTC_
 
-**288 tracked** · 5 scoring 80+ · 45 scoring 70+ · 0 applied · 0 interview(s)
+**296 tracked** · 5 scoring 80+ · 48 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -74,7 +74,7 @@ _Last updated: 2026-10-23 13:21 UTC_
 - **Salary:** £30,000
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=Oii-puTO8RG1G-F4Et1fCg&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=HAVt7afP8RGrV9qPojDs1w&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
 
 ### 77/100 🟡 Transport Operations Administrator — Talent Finder
 - **Location:** East London, London
@@ -209,12 +209,12 @@ _Last updated: 2026-10-23 13:21 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/it-support-engineer/57480512)
 
-### 73/100 🟡 Administrative Coordinator — Recruitment Solutions
-- **Location:** Sevenoaks
-- **Salary:** £28,000–£30,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (16/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
+### 73/100 🟡 Operations Coordinator - Import & Export — Heathrow Personnel
+- **Location:** West Byfleet
+- **Salary:** £32,000–£35,000
+- **Why:** ✅ suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/administrative-coordinator/57467833)
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-import-export/57480799)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
