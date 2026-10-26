@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-25 13:10 UTC_
+_Last updated: 2026-10-26 15:09 UTC_
 
-**299 tracked** · 5 scoring 80+ · 47 scoring 70+ · 0 applied · 0 interview(s)
+**304 tracked** · 5 scoring 80+ · 49 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -74,7 +74,7 @@ _Last updated: 2026-10-25 13:10 UTC_
 - **Salary:** £30,000
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=Hr08Y3XQ8RGZxr6nOHN6IA&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
+- [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=zmnaKU_R8RGTmpORxmRtzw&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
 
 ### 77/100 🟡 Transport Operations Administrator — Talent Finder
 - **Location:** East London, London
@@ -96,6 +96,13 @@ _Last updated: 2026-10-25 13:10 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good location (5/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
+
+### 76/100 🟡 Operations Coordinator — BAPRAS Trading Limited
+- **Location:** WC2A3PE
+- **Salary:** £28,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (12/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57492036)
 
 ### 76/100 🟡 Operations Specialist — Rockpool Recruitment LTD
 - **Location:** Surrey
@@ -208,13 +215,6 @@ _Last updated: 2026-10-25 13:10 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/it-support-engineer/57480512)
-
-### 73/100 🟡 Administrative Coordinator — Recruitment Solutions
-- **Location:** Sevenoaks
-- **Salary:** £28,000–£30,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (16/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/administrative-coordinator/57467833)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
