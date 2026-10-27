@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-26 15:09 UTC_
+_Last updated: 2026-10-27 14:24 UTC_
 
-**304 tracked** · 5 scoring 80+ · 49 scoring 70+ · 0 applied · 0 interview(s)
+**320 tracked** · 7 scoring 80+ · 56 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -19,6 +19,20 @@ _Last updated: 2026-10-26 15:09 UTC_
 - **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/client-review-operations-administrator/57461676)
+
+### 82/100 🟢 Operations Coordinator — Reed
+- **Location:** KT14EQ
+- **Salary:** £30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57494782)
+
+### 82/100 🟢 Operations Coordinator Aviation — Reed
+- **Location:** KT14EQ
+- **Salary:** £30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-aviation/57494786)
 
 ### 81/100 🟢 Buying Administrator — Uxbridge Employment Agency
 - **Location:** Langley
@@ -97,6 +111,13 @@ _Last updated: 2026-10-26 15:09 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
 
+### 76/100 🟡 Customer Success Intern — Where You At Ltd
+- **Location:** London
+- **Salary:** not stated
+- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), training or progression mentioned (4/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-success-intern/57496192)
+
 ### 76/100 🟡 Operations Coordinator — BAPRAS Trading Limited
 - **Location:** WC2A3PE
 - **Salary:** £28,000
@@ -160,6 +181,13 @@ _Last updated: 2026-10-26 15:09 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/export-seafreight-operator/57457940)
 
+### 74/100 🟡 Trainee Project Coordinator — Recruitment Solutions
+- **Location:** Tunbridge Wells
+- **Salary:** £26,000–£30,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (15/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/trainee-project-coordinator/57496902)
+
 ### 74/100 🟡 Operations & Commercial Coordinator — GMI
 - **Location:** CR44TU
 - **Salary:** £30,000–£35,000
@@ -187,34 +215,6 @@ _Last updated: 2026-10-26 15:09 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/tenancy-review-administrator/57455587)
-
-### 74/100 🟡 Lettings Hub Administrator — Hamptons
-- **Location:** NW36TR
-- **Salary:** £28,000–£30,000
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/lettings-hub-administrator/57442045)
-
-### 74/100 🟡 School & Nursery Administrator / Receptionist —  Waverley Preparatory School and Nursery
-- **Location:** RG404YD
-- **Salary:** not stated
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (13/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/school-nursery-administrator-receptionist/57443468)
-
-### 73/100 🟡 Operations Coordinator - Import & Export — Heathrow Personnel
-- **Location:** GU212AA
-- **Salary:** £32,000–£35,000
-- **Why:** ✅ suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-import-export/57480799)
-
-### 73/100 🟡 IT Support Engineer — ICT Solutions
-- **Location:** Wokingham
-- **Salary:** £30,000–£40,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/it-support-engineer/57480512)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
