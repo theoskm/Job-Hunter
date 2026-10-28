@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-27 14:24 UTC_
+_Last updated: 2026-10-28 15:05 UTC_
 
-**320 tracked** · 7 scoring 80+ · 56 scoring 70+ · 0 applied · 0 interview(s)
+**337 tracked** · 7 scoring 80+ · 60 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -160,6 +160,13 @@ _Last updated: 2026-10-27 14:24 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57435296)
 
+### 75/100 🟡 Marketing Coordinator — Hays Specialist Recruitment Limited
+- **Location:** GU140FB
+- **Salary:** not stated
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/marketing-coordinator/57498879)
+
 ### 75/100 🟡 Transport Administrator — GXO Logistics
 - **Location:** SE77SN
 - **Salary:** £30,742
@@ -181,6 +188,13 @@ _Last updated: 2026-10-27 14:24 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/export-seafreight-operator/57457940)
 
+### 74/100 🟡 Business Administrator and Data Entry Apprentice — The Royal Marsden NHS Foundation Trust
+- **Location:** Belmont, Sutton
+- **Salary:** £30,630–£32,346
+- **Why:** ✅ entry-level friendly (21/30), pay in your target range (15/15), good step towards project management (8/10), good location (5/5), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
+- **Status:** NEW
+- [Open the advert](https://www.adzuna.co.uk/jobs/details/5944314611?utm_medium=api&utm_source=f390393e)
+
 ### 74/100 🟡 Trainee Project Coordinator — Recruitment Solutions
 - **Location:** Tunbridge Wells
 - **Salary:** £26,000–£30,000
@@ -188,33 +202,19 @@ _Last updated: 2026-10-27 14:24 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/trainee-project-coordinator/57496902)
 
+### 74/100 🟡 Project Support Officer — Lorien
+- **Location:** London
+- **Salary:** not stated
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (8/10), training or progression mentioned (4/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/project-support-officer/57498418)
+
 ### 74/100 🟡 Operations & Commercial Coordinator — GMI
 - **Location:** CR44TU
 - **Salary:** £30,000–£35,000
 - **Why:** ✅ suits skills from your current work (15/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-commercial-coordinator/57490734)
-
-### 74/100 🟡 Service Advisor — Hawkfield Recruitment Ltd
-- **Location:** KT139ET
-- **Salary:** £32,000–£40,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (18/20), mentions skills you have (12/15), pay in your target range (15/15), training or progression mentioned (4/5) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/service-advisor/57486754)
-
-### 74/100 🟡 Accounts Assistant —  Bond Recruitment 
-- **Location:** KT160DN
-- **Salary:** £28,000
-- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (18/20), pay in your target range (12/15), training or progression mentioned (4/5) · ⚠️ not much of a step towards PM (3/10), further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/accounts-assistant/57459682)
-
-### 74/100 🟡 Tenancy Review Administrator — Hamptons
-- **Location:** London
-- **Salary:** £28,000–£30,000
-- **Why:** ✅ suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/tenancy-review-administrator/57455587)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
