@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-28 15:05 UTC_
+_Last updated: 2026-10-29 15:12 UTC_
 
-**337 tracked** · 7 scoring 80+ · 60 scoring 70+ · 0 applied · 0 interview(s)
+**349 tracked** · 8 scoring 80+ · 64 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -47,6 +47,13 @@ _Last updated: 2026-10-28 15:05 UTC_
 - **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/administrator/57464758)
+
+### 80/100 🟢 Customer Service Administrator — Nelson Dish and Glasswashing Machines Ltd
+- **Location:** W38BH
+- **Salary:** £28,000–£32,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57504478)
 
 ### 80/100 🟢 Administrator — Michael Page Business Support
 - **Location:** London
@@ -208,13 +215,6 @@ _Last updated: 2026-10-28 15:05 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (8/10), training or progression mentioned (4/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/project-support-officer/57498418)
-
-### 74/100 🟡 Operations & Commercial Coordinator — GMI
-- **Location:** CR44TU
-- **Salary:** £30,000–£35,000
-- **Why:** ✅ suits skills from your current work (15/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-commercial-coordinator/57490734)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
