@@ -1,10 +1,17 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-10-29 15:12 UTC_
+_Last updated: 2026-10-30 15:01 UTC_
 
-**349 tracked** · 8 scoring 80+ · 64 scoring 70+ · 0 applied · 0 interview(s)
+**360 tracked** · 11 scoring 80+ · 68 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
+
+### 84/100 🟢 Operations coordinator — Uxbridge Employment Agency
+- **Location:** Uxbridge
+- **Salary:** £30,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57507184)
 
 ### 84/100 🟢 Operations Support Lead — PHS Group Limited
 - **Location:** TW182ST
@@ -33,6 +40,20 @@ _Last updated: 2026-10-29 15:12 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-aviation/57494786)
+
+### 81/100 🟢 Customer Service Administrator — Randstad Construction & Property
+- **Location:** South Croydon
+- **Salary:** £27,000–£27,334
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (11/15), good step towards project management (8/10), good location (5/5), training or progression mentioned (4/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57507275)
+
+### 81/100 🟢 Service Operations Administrator — SRS Recruitment Solutions
+- **Location:** Wimbledon
+- **Salary:** not stated
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (8/10), good location (5/5), training or progression mentioned (4/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/service-operations-administrator/57508572)
 
 ### 81/100 🟢 Buying Administrator — Uxbridge Employment Agency
 - **Location:** Langley
@@ -75,6 +96,13 @@ _Last updated: 2026-10-29 15:12 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
+
+### 77/100 🟡 Logistics Coordinator — International Logistics Group
+- **Location:** RH191XZ
+- **Salary:** £29,244
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (14/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57506982)
 
 ### 77/100 🟡 Customer Service Coordinator — Reed
 - **Location:** HA35EQ
@@ -187,34 +215,6 @@ _Last updated: 2026-10-29 15:12 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57483245)
-
-### 75/100 🟡 Export Seafreight Operator — Uniserve
-- **Location:** RM188AA
-- **Salary:** not stated
-- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (18/20), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/export-seafreight-operator/57457940)
-
-### 74/100 🟡 Business Administrator and Data Entry Apprentice — The Royal Marsden NHS Foundation Trust
-- **Location:** Belmont, Sutton
-- **Salary:** £30,630–£32,346
-- **Why:** ✅ entry-level friendly (21/30), pay in your target range (15/15), good step towards project management (8/10), good location (5/5), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5944314611?utm_medium=api&utm_source=f390393e)
-
-### 74/100 🟡 Trainee Project Coordinator — Recruitment Solutions
-- **Location:** Tunbridge Wells
-- **Salary:** £26,000–£30,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (15/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/trainee-project-coordinator/57496902)
-
-### 74/100 🟡 Project Support Officer — Lorien
-- **Location:** London
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (8/10), training or progression mentioned (4/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/project-support-officer/57498418)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
