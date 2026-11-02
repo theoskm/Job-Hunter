@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-01 15:02 UTC_
+_Last updated: 2026-11-02 18:14 UTC_
 
-**381 tracked** · 11 scoring 80+ · 68 scoring 70+ · 0 applied · 0 interview(s)
+**392 tracked** · 12 scoring 80+ · 71 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -19,6 +19,13 @@ _Last updated: 2026-11-01 15:02 UTC_
 - **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57465069)
+
+### 83/100 🟢 Client Review & Operations Administrator — TEMPLEGATE RECRUITMENT
+- **Location:** Hook
+- **Salary:** £30,000–£35,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/client-review-operations-administrator/57515630)
 
 ### 83/100 🟢 Client Review & Operations Administrator — TEMPLEGATE RECRUITMENT
 - **Location:** RG279HA
@@ -195,26 +202,19 @@ _Last updated: 2026-11-01 15:02 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57435296)
 
-### 75/100 🟡 Marketing Coordinator — Hays Specialist Recruitment Limited
-- **Location:** GU140FB
-- **Salary:** not stated
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
+### 75/100 🟡 Logistics Coordinator — Recruitment Solutions
+- **Location:** Tonbridge
+- **Salary:** £26,000–£32,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/marketing-coordinator/57498879)
+- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57517296)
 
-### 75/100 🟡 Transport Administrator — GXO Logistics
-- **Location:** SE77SN
-- **Salary:** £30,742
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/transport-administrator/57486555)
-
-### 75/100 🟡 Customer Service / Administrator — Mulberry Recruitment
-- **Location:** Guildford
-- **Salary:** £24,000–£28,000
+### 75/100 🟡 Customer Service Administrator — Huntress
+- **Location:** Camberley
+- **Salary:** £26,000–£28,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57483245)
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57514701)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
