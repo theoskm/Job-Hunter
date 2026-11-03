@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-02 18:14 UTC_
+_Last updated: 2026-11-03 16:09 UTC_
 
-**392 tracked** · 12 scoring 80+ · 71 scoring 70+ · 0 applied · 0 interview(s)
+**405 tracked** · 12 scoring 80+ · 71 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
