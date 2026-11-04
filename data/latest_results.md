@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-03 16:09 UTC_
+_Last updated: 2026-11-04 16:13 UTC_
 
-**405 tracked** · 12 scoring 80+ · 71 scoring 70+ · 0 applied · 0 interview(s)
+**422 tracked** · 13 scoring 80+ · 77 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -19,6 +19,13 @@ _Last updated: 2026-11-03 16:09 UTC_
 - **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57465069)
+
+### 83/100 🟢 Technical Administrator —  Aster Group
+- **Location:** London
+- **Salary:** £31,495
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/technical-administrator/57522133)
 
 ### 83/100 🟢 Client Review & Operations Administrator — TEMPLEGATE RECRUITMENT
 - **Location:** Hook
@@ -153,6 +160,13 @@ _Last updated: 2026-11-03 16:09 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
 
+### 76/100 🟡 Receptionist/Administrator — 	 ERS Recruiting Ltd
+- **Location:** N183BH
+- **Salary:** £30,000–£33,500
+- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/receptionist-administrator/57528345)
+
 ### 76/100 🟡 Customer Success Intern — Where You At Ltd
 - **Location:** London
 - **Salary:** not stated
@@ -201,20 +215,6 @@ _Last updated: 2026-11-03 16:09 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57435296)
-
-### 75/100 🟡 Logistics Coordinator — Recruitment Solutions
-- **Location:** Tonbridge
-- **Salary:** £26,000–£32,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (16/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57517296)
-
-### 75/100 🟡 Customer Service Administrator — Huntress
-- **Location:** Camberley
-- **Salary:** £26,000–£28,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57514701)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
