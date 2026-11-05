@@ -1,10 +1,17 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-04 16:13 UTC_
+_Last updated: 2026-11-05 16:26 UTC_
 
-**422 tracked** · 13 scoring 80+ · 77 scoring 70+ · 0 applied · 0 interview(s)
+**443 tracked** · 14 scoring 80+ · 83 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
+
+### 86/100 🟢 Customer Service Operations Administrator — Copperfield Recruitment Ltd
+- **Location:** GU512RT
+- **Salary:** £28,000–£30,000
+- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531452)
 
 ### 84/100 🟢 Operations coordinator — Uxbridge Employment Agency
 - **Location:** Uxbridge
@@ -97,6 +104,13 @@ _Last updated: 2026-11-04 16:13 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/administrator/57463050)
 
+### 79/100 🟡 Customer Service Operations Administrator — Copperfield Recruitment Ltd
+- **Location:** KT169AH
+- **Salary:** £28,000–£30,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
+
 ### 78/100 🟡 Operational Administrator | Dartford — GXO Logistics
 - **Location:** DA15XT
 - **Salary:** £29,217
@@ -110,6 +124,13 @@ _Last updated: 2026-11-04 16:13 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
+
+### 77/100 🟡 Group Operations Specialist — Operation Europe LTD
+- **Location:** N17ER
+- **Salary:** £28,000–£32,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/group-operations-specialist/57535408)
 
 ### 77/100 🟡 Logistics Coordinator — International Logistics Group
 - **Location:** RH191XZ
@@ -160,6 +181,13 @@ _Last updated: 2026-11-04 16:13 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
 
+### 76/100 🟡 Home Ownership Administrator — The Hyde Group
+- **Location:** SE19EQ
+- **Salary:** £28,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535696)
+
 ### 76/100 🟡 Receptionist/Administrator — 	 ERS Recruiting Ltd
 - **Location:** N183BH
 - **Salary:** £30,000–£33,500
@@ -187,34 +215,6 @@ _Last updated: 2026-11-04 16:13 UTC_
 - **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-specialist/57482092)
-
-### 76/100 🟡 Customer Service Advisor — Parkside Office Professional
-- **Location:** London
-- **Salary:** £28,000–£32,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), training or progression mentioned (4/5) · ⚠️ not much of a step towards PM (3/10)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-advisor/57458197)
-
-### 76/100 🟡 Patient Services Co-ordinator/Administrator — Specsavers
-- **Location:** Epsom
-- **Salary:** £28,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/patient-services-co-ordinator-administrator/57455799)
-
-### 76/100 🟡 HR Assistant — Oxted School
-- **Location:** Surrey
-- **Salary:** £25,940–£31,224
-- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (15/20), pay in your target range (15/15), training or progression mentioned (5/5) · ⚠️ not much of a step towards PM (3/10)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/hr-assistant/57454563)
-
-### 76/100 🟡 Home Ownership Administrator — The Hyde Group
-- **Location:** SE19EQ
-- **Salary:** £28,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57435296)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
