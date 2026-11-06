@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-05 16:26 UTC_
+_Last updated: 2026-11-06 15:53 UTC_
 
-**443 tracked** · 14 scoring 80+ · 83 scoring 70+ · 0 applied · 0 interview(s)
+**449 tracked** · 14 scoring 80+ · 85 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -111,6 +111,13 @@ _Last updated: 2026-11-05 16:26 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
 
+### 78/100 🟡 Sales Administrator — CTR Select
+- **Location:** RG412QH
+- **Salary:** £30,000–£32,500
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/sales-administrator/57533593)
+
 ### 78/100 🟡 Operational Administrator | Dartford — GXO Logistics
 - **Location:** DA15XT
 - **Salary:** £29,217
@@ -208,13 +215,6 @@ _Last updated: 2026-11-05 16:26 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (12/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57492036)
-
-### 76/100 🟡 Operations Specialist — Rockpool Recruitment LTD
-- **Location:** Surrey
-- **Salary:** £32,000–£34,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ not much of a step towards PM (3/10)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-specialist/57482092)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
