@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-08 15:06 UTC_
+_Last updated: 2026-11-09 18:43 UTC_
 
-**464 tracked** · 14 scoring 80+ · 85 scoring 70+ · 0 applied · 0 interview(s)
+**475 tracked** · 15 scoring 80+ · 88 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -26,6 +26,13 @@ _Last updated: 2026-11-08 15:06 UTC_
 - **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-support-lead/57465069)
+
+### 83/100 🟢 Administrator — Office Angels
+- **Location:** West Molesey
+- **Salary:** £26,000–£30,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrator/57544640)
 
 ### 83/100 🟢 Technical Administrator —  Aster Group
 - **Location:** London
@@ -103,6 +110,13 @@ _Last updated: 2026-11-08 15:06 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/administrator/57463050)
+
+### 79/100 🟡 Administrative Assistant — NFP People LTD
+- **Location:** EC4V4EH
+- **Salary:** £27,940–£31,840
+- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrative-assistant/57546297)
 
 ### 79/100 🟡 Customer Service Operations Administrator — Copperfield Recruitment Ltd
 - **Location:** KT169AH
@@ -193,7 +207,7 @@ _Last updated: 2026-11-08 15:06 UTC_
 - **Salary:** £28,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535696)
+- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535695)
 
 ### 76/100 🟡 Receptionist/Administrator — 	 ERS Recruiting Ltd
 - **Location:** N183BH
@@ -201,20 +215,6 @@ _Last updated: 2026-11-08 15:06 UTC_
 - **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/receptionist-administrator/57528345)
-
-### 76/100 🟡 Customer Success Intern — Where You At Ltd
-- **Location:** London
-- **Salary:** not stated
-- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), training or progression mentioned (4/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-success-intern/57496192)
-
-### 76/100 🟡 Operations Coordinator — BAPRAS Trading Limited
-- **Location:** WC2A3PE
-- **Salary:** £28,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (12/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57492036)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
