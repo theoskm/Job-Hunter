@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-09 18:43 UTC_
+_Last updated: 2026-11-10 16:24 UTC_
 
-**475 tracked** · 15 scoring 80+ · 88 scoring 70+ · 0 applied · 0 interview(s)
+**489 tracked** · 15 scoring 80+ · 89 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -125,6 +125,13 @@ _Last updated: 2026-11-09 18:43 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
 
+### 78/100 🟡 Operations Coordinator — Pertemps Enfield
+- **Location:** Hendon
+- **Salary:** £30,000–£32,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57545899)
+
 ### 78/100 🟡 Sales Administrator — CTR Select
 - **Location:** RG412QH
 - **Salary:** £30,000–£32,500
@@ -207,14 +214,7 @@ _Last updated: 2026-11-09 18:43 UTC_
 - **Salary:** £28,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535695)
-
-### 76/100 🟡 Receptionist/Administrator — 	 ERS Recruiting Ltd
-- **Location:** N183BH
-- **Salary:** £30,000–£33,500
-- **Why:** ✅ suits skills from your current work (18/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/receptionist-administrator/57528345)
+- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535696)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
