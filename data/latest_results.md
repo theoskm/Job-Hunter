@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-10 16:24 UTC_
+_Last updated: 2026-11-11 16:06 UTC_
 
-**489 tracked** · 15 scoring 80+ · 89 scoring 70+ · 0 applied · 0 interview(s)
+**507 tracked** · 15 scoring 80+ · 92 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -125,6 +125,13 @@ _Last updated: 2026-11-10 16:24 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
 
+### 78/100 🟡 Operations Administrator — Reed
+- **Location:** KT14ER
+- **Salary:** £28,000–£30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-administrator/57557520)
+
 ### 78/100 🟡 Operations Coordinator — Pertemps Enfield
 - **Location:** Hendon
 - **Salary:** £30,000–£32,000
@@ -208,13 +215,6 @@ _Last updated: 2026-11-10 16:24 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good location (5/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
-
-### 76/100 🟡 Home Ownership Administrator — The Hyde Group
-- **Location:** SE19EQ
-- **Salary:** £28,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/home-ownership-administrator/57535696)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
