@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-12 16:47 UTC_
+_Last updated: 2026-11-13 16:15 UTC_
 
-**524 tracked** · 15 scoring 80+ · 95 scoring 70+ · 0 applied · 0 interview(s)
+**536 tracked** · 16 scoring 80+ · 98 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -68,6 +68,13 @@ _Last updated: 2026-11-12 16:47 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-aviation/57494786)
+
+### 81/100 🟢 Administrator — GXO Logistics
+- **Location:** BR53DA
+- **Salary:** £27,000
+- **Why:** ✅ entry-level friendly (26/30), suits skills from your current work (20/20), mentions skills you have (12/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/administrator/57565207)
 
 ### 81/100 🟢 Customer Service Administrator — Randstad Construction & Property
 - **Location:** South Croydon
@@ -160,6 +167,13 @@ _Last updated: 2026-11-12 16:47 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
 
+### 77/100 🟡 Customer Service Administrator — Lloyd Recruitment Services Ltd
+- **Location:** Kingston Upon Thames
+- **Salary:** £26,000–£28,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57566491)
+
 ### 77/100 🟡 Group Operations Specialist — Operation Europe LTD
 - **Location:** N17ER
 - **Salary:** £28,000–£32,000
@@ -201,20 +215,6 @@ _Last updated: 2026-11-12 16:47 UTC_
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
 - [Open the advert](https://www.adzuna.co.uk/jobs/details/5934274160?utm_medium=api&utm_source=f390393e)
-
-### 77/100 🟡 Transport Operations Administrator — HR Dept
-- **Location:** Lea Bridge, East London
-- **Salary:** £30,000
-- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5931144816?utm_medium=api&utm_source=f390393e)
-
-### 77/100 🟡 Logistics Coordinator — Michael Page Business Support
-- **Location:** South Croydon
-- **Salary:** £32,000–£35,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15), good location (5/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57458053)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
