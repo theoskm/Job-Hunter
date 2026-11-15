@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-14 14:59 UTC_
+_Last updated: 2026-11-15 15:37 UTC_
 
-**546 tracked** · 16 scoring 80+ · 98 scoring 70+ · 0 applied · 0 interview(s)
+**548 tracked** · 16 scoring 80+ · 98 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -137,7 +137,7 @@ _Last updated: 2026-11-14 14:59 UTC_
 - **Salary:** £28,000–£30,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-administrator/57557520)
+- [Open the advert](https://www.reed.co.uk/jobs/operations-administrator/57557524)
 
 ### 78/100 🟡 Operations Coordinator — Pertemps Enfield
 - **Location:** Hendon
