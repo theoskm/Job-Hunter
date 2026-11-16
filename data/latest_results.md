@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-15 15:37 UTC_
+_Last updated: 2026-11-16 18:25 UTC_
 
-**548 tracked** · 16 scoring 80+ · 98 scoring 70+ · 0 applied · 0 interview(s)
+**557 tracked** · 17 scoring 80+ · 101 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -68,6 +68,13 @@ _Last updated: 2026-11-15 15:37 UTC_
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (10/10), training or progression mentioned (5/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator-aviation/57494786)
+
+### 81/100 🟢 Customer Service Coordinator — Australasian Recruitment Company
+- **Location:** London
+- **Salary:** £26,000–£29,000
+- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (13/15)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/customer-service-coordinator/57571259)
 
 ### 81/100 🟢 Administrator — GXO Logistics
 - **Location:** BR53DA
@@ -137,7 +144,7 @@ _Last updated: 2026-11-15 15:37 UTC_
 - **Salary:** £28,000–£30,000
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-administrator/57557524)
+- [Open the advert](https://www.reed.co.uk/jobs/operations-administrator/57557520)
 
 ### 78/100 🟡 Operations Coordinator — Pertemps Enfield
 - **Location:** Hendon
@@ -208,13 +215,6 @@ _Last updated: 2026-11-15 15:37 UTC_
 - **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
 - **Status:** NEW
 - [Open the advert](https://www.adzuna.co.uk/jobs/land/ad/5934507734?se=zmnaKU_R8RGTmpORxmRtzw&utm_medium=api&utm_source=f390393e&v=14DC8D4C08FBC441D89EE68A440D09B650BF0ECF)
-
-### 77/100 🟡 Transport Operations Administrator — Talent Finder
-- **Location:** East London, London
-- **Salary:** £30,000
-- **Why:** ✅ entry-level friendly (26/30), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · advert was cut short, so this is a rough score
-- **Status:** NEW
-- [Open the advert](https://www.adzuna.co.uk/jobs/details/5934274160?utm_medium=api&utm_source=f390393e)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
