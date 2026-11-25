@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-24 19:29 UTC_
+_Last updated: 2026-11-25 18:37 UTC_
 
-**637 tracked** · 20 scoring 80+ · 121 scoring 70+ · 0 applied · 0 interview(s)
+**643 tracked** · 20 scoring 80+ · 121 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -160,6 +160,13 @@ _Last updated: 2026-11-24 19:29 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
 
+### 78/100 🟡 Operations Coordinator — Huntress
+- **Location:** Bracknell
+- **Salary:** £30,000–£33,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57610557)
+
 ### 78/100 🟡 Customer Service Administrator — Reed
 - **Location:** RH11LQ
 - **Salary:** £30,000–£32,000
@@ -188,12 +195,12 @@ _Last updated: 2026-11-24 19:29 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford/57467375)
 
-### 78/100 🟡 Operations Coordinator — Huntress
-- **Location:** Bracknell
-- **Salary:** £29,000–£35,000
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
+### 77/100 🟡 Operational Administrator | Dartford 1 — GXO Logistics
+- **Location:** DA15XT
+- **Salary:** £28,644
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (13/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operations-coordinator/57442186)
+- [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford-1/57613343)
 
 ### 77/100 🟡 Customer Service Administrator — Lloyd Recruitment Services Ltd
 - **Location:** Kingston Upon Thames
@@ -208,13 +215,6 @@ _Last updated: 2026-11-24 19:29 UTC_
 - **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/group-operations-specialist/57535408)
-
-### 77/100 🟡 Logistics Coordinator — International Logistics Group
-- **Location:** RH191XZ
-- **Salary:** £29,244
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (14/15), good step towards project management (10/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/logistics-coordinator/57506982)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
