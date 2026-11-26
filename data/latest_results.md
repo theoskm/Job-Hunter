@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-25 18:37 UTC_
+_Last updated: 2026-11-26 18:23 UTC_
 
-**643 tracked** · 20 scoring 80+ · 121 scoring 70+ · 0 applied · 0 interview(s)
+**656 tracked** · 20 scoring 80+ · 122 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -188,12 +188,12 @@ _Last updated: 2026-11-25 18:37 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/sales-administrator/57533593)
 
-### 78/100 🟡 Operational Administrator | Dartford — GXO Logistics
+### 77/100 🟡 Operational Administrator | Dartford — GXO Logistics
 - **Location:** DA15XT
-- **Salary:** £29,217
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (14/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Salary:** £28,644
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (13/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford/57467375)
+- [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford/57613343)
 
 ### 77/100 🟡 Operational Administrator | Dartford 1 — GXO Logistics
 - **Location:** DA15XT
