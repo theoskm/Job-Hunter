@@ -1,8 +1,8 @@
 # Job Hunter — Latest Results
 
-_Last updated: 2026-11-26 18:23 UTC_
+_Last updated: 2026-11-27 18:08 UTC_
 
-**656 tracked** · 20 scoring 80+ · 122 scoring 70+ · 0 applied · 0 interview(s)
+**668 tracked** · 20 scoring 80+ · 126 scoring 70+ · 0 applied · 0 interview(s)
 
 ## Top matches
 
@@ -146,6 +146,13 @@ _Last updated: 2026-11-26 18:23 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/administrator/57463050)
 
+### 79/100 🟡 Sales Administrator — Reed
+- **Location:** UB111EZ
+- **Salary:** £25,000–£30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/sales-administrator/57619108)
+
 ### 79/100 🟡 Administrative Assistant — NFP People LTD
 - **Location:** EC4V4EH
 - **Salary:** £27,940–£31,840
@@ -159,6 +166,13 @@ _Last updated: 2026-11-26 18:23 UTC_
 - **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/customer-service-operations-administrator/57531351)
+
+### 78/100 🟡 People Services Coordinator — The Bread Factory
+- **Location:** London
+- **Salary:** £28,000–£50,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (8/10)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/people-services-coordinator/57618651)
 
 ### 78/100 🟡 Operations Coordinator — Huntress
 - **Location:** Bracknell
@@ -188,33 +202,19 @@ _Last updated: 2026-11-26 18:23 UTC_
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/sales-administrator/57533593)
 
+### 77/100 🟡 Buyer Administrator — Cygnet
+- **Location:** ME194AE
+- **Salary:** £30,000
+- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (13/15), pay in your target range (15/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
+- **Status:** NEW
+- [Open the advert](https://www.reed.co.uk/jobs/buyer-administrator/57620092)
+
 ### 77/100 🟡 Operational Administrator | Dartford — GXO Logistics
 - **Location:** DA15XT
 - **Salary:** £28,644
 - **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (13/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
 - **Status:** NEW
 - [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford/57613343)
-
-### 77/100 🟡 Operational Administrator | Dartford 1 — GXO Logistics
-- **Location:** DA15XT
-- **Salary:** £28,644
-- **Why:** ✅ suits skills from your current work (20/20), mentions skills you have (15/15), pay in your target range (13/15), good step towards project management (8/10), training or progression mentioned (4/5) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/operational-administrator--dartford-1/57613343)
-
-### 77/100 🟡 Customer Service Administrator — Lloyd Recruitment Services Ltd
-- **Location:** Kingston Upon Thames
-- **Salary:** £26,000–£28,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (12/15), good step towards project management (8/10) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/customer-service-administrator/57566491)
-
-### 77/100 🟡 Group Operations Specialist — Operation Europe LTD
-- **Location:** N17ER
-- **Salary:** £28,000–£32,000
-- **Why:** ✅ entry-level friendly (21/30), suits skills from your current work (20/20), mentions skills you have (12/15), pay in your target range (15/15) · ⚠️ further from your top areas (1/5)
-- **Status:** NEW
-- [Open the advert](https://www.reed.co.uk/jobs/group-operations-specialist/57535408)
 
 ---
 _Nothing here is applied for automatically — every application is yours to send._
